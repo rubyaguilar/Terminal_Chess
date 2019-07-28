@@ -1,0 +1,56 @@
+# Project-specific
+## none
+
+# Mac file finder metadata
+.DS_Store
+# MS Office temporary file
+~*
+# Emacs backup file
+*~
+
+# LaTeX files
+*.aux
+*.log
+*.out
+*.tex.gz
+*.synctex.gz
+*.texmk
+*.dvi
+*.fls
+*.fdb_latexmk
+
+# C files
+*.o
+*.out
+
+# Java files
+*.class
+
+# Python files
+*.pyc
+*.pyo
+
+# JetBrains (IntelliJ IDEA, PyCharm, etc) files
+.idea/
+cmake-build-*/
+out/
+bin/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse files
+bin/
+.settings/
+.classpath
+.project
+
+# Maven
+target/
+
+# Miscellaneous
+tmp/
+*.tmp
+*.bak
+*.swp
+
