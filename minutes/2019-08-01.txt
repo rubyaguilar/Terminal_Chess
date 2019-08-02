@@ -1,0 +1,88 @@
+Emily Ewalt: 
+Activity since last scrum: 
+Design Pattern 
+Plan for Next Scrum: 
+ Finalize design details and start writing the Piece package code
+Put some issues up on gitlab 
+Board logic
+Obstacles Issues: 
+ Minor design differences, which works best
+
+Ruben Aguilar: 
+Activity since last scrum: 
+Get familiar with source code 
+Plan for Next Scrum: 
+Begin design for Chess game 
+Have issues up it GitLab
+Looking into test cases and making a GitLab pipeline, maybe? 
+Continuous Integration Pipeline
+Obstacles Issues: 
+ 
+
+Suhaib Shaikh: 
+Activity since last scrum: 
+Design Pattern 
+Plan for Next Scrum: 
+ Get familiar with specific rules of chess
+Get familiar with source code
+Obstacles Issues: 
+
+Shichen Zhao: 
+Activity since last scrum: 
+Get familiar with the chess 
+Plan for Next Scrum: 
+    Begin design the UI part
+    Put some issues up on the GitLab
+Obstacles Issues: 
+
+
+
+
+
+
+Issues: 
+N/A right now 
+
+Other Topics
+Plan for the Sprint: 
+Get the UI up and running
+Shichen 
+Set locations on the board 
+For example, A2
+E6
+Flesh out class designs 
+PieceSets: map
+Pieces: have color enum
+Work on Pieces logic:
+Emily
+Ruben 
+Knight 
+Research about Chess
+Specific rules of the game (Checkmate, castling, etc)
+Options for board: 
+2D array
+
+
+
+https://canvas.unl.edu/courses/61133/pages/text-ideas?module_item_id=1362876
+
+Sprint Plan: 
+Project Backlog: Issues for the whole project
+UI (board display)
+Piece moves 
+Board logic (how are people going to move)
+Testing 
+Class Diagram 
+Sprint Backlog: List of issues to be addressed in current iteration 
+Board Display / Board Logic 
+Piece move, relative to board logic 
+Initial user interface 
+
+
+
+
+
+
+
+A1  ♜  C1  D1 E1 F1 G1 H1
+A2 B2  C2 ♞  E2 F2 G2 H2 
