@@ -34,15 +34,11 @@ public class Board {
 	public static Board getBoard() {
 		if (instance == null) {
 			instance = new Board();
-		} else {
-			// new Board() always resets the board, so if there's already
-			// an instance then we just reset the current board
-			resetBoard();
-		}
+		} 
 		return instance;
 	}
 
-	private static void resetBoard() {
+	public static void resetBoard() {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				
