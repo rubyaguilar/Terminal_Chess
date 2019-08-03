@@ -18,7 +18,7 @@ public class Board {
 	 * @currentBoard represents the current board with the chest pieces currently in
 	 *               play
 	 */
-	private static String[][] boardLayout = new String[8][8];
+	private static final String[][] boardLayout = new String[8][8];
 	private static String[][] currentBoard = new String[8][8];
 
 	private Board() {
@@ -96,5 +96,37 @@ public class Board {
 			System.out.print("\n");
 		}
 	}
+	
+	/**
+	 * Given 2 coordinates on the board, swap the objects on the board
+	 * @param row1 		- row of the original piece
+	 * @param column1	- column of the original piece
+	 * @param row2		- row of the end spot
+	 * @param column2	- column of the end spot
+	 */
+	public void swap(int row1, int column1, int row2, int column2) {
+		currentBoard[row2][column2] = currentBoard[row1][column1];
+		currentBoard[row1][column1] = boardLayout[row1][column1];
+	}
 
+	/**
+	 * Given 2 coordinates on the board, swap the objects on the board
+	 * @param row1 		- row of the original piece
+	 * @param column1	- column of the original piece
+	 * @param row2		- row of the end spot
+	 * @param column2	- column of the end spot
+	 */
+	/**
+	 * Given 2 coordinates on the board, swap the objects on the board
+	 * @param l1 - coordinates of the original piece
+	 * @param l2 - coordinates of the end spot
+	 */
+	public void swap(Location l1, Location l2) {
+		int row1 = l1.getRow();
+		int column1 = l1.getColumn();
+		int row2 = l2.getRow();
+		int column2 = l2.getColumn();
+		this.swap(row1, column1, row2, column2);
+	}
+	
 }
