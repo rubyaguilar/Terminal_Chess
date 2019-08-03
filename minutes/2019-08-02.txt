@@ -1,0 +1,78 @@
+Emily Ewalt: 
+Activity/Accomplishments since last scrum
+Implemented Board class and backing 2D arrays
+Planned Activity for next scrum
+Implement logic for at least one piece
+Implement swap function for the board
+Obstacles Issues 
+Still don’t know how to play chess
+
+Ruben Aguilar: 
+Activity/Accomplishments since last scrum
+Read through Chess wiki and made issues things we didn’t consider (pawn promotion, etc), made package for chess pieces strategy 
+Planned Activity for next scrum
+Familiarize with board layout
+Initial board initializing 
+Indicate white move turn 
+Prompt for piece to move - Piece 
+
+ integration of pieces - knight 
+
+Obstacles Issues 
+Don’t know how to integrate board with pieces 
+
+Suhaib Shaikh: 
+Activity/Accomplishments since last scrum
+Learned the specific rules of chess such as castling, en passant, and promotion
+Planned Activity for next scrum
+Understand board layout
+Understand logic of bishop
+Enum for player colors
+Obstacles Issues 
+How the piece works with the piece
+Don’t know how to check positions of board with piece 
+
+Shichen Zhao: 
+Activity/Accomplishments since last scrum
+Do some design of UI part which using the GUI
+Understand the rules of chess
+Planned Activity for next scrum
+Understand the board layout
+Implement  some pieces logic
+Obstacles Issues 
+ 
+
+IMPORTANT: 
+Each piece will have move(int row, int column)
+This is where you will do all the logic.
+At the end you will call the swap(int row1, int column1, int row2, int column2)
+
+Issues: 
+
+
+
+Other Topics: 
+Special Rules of the game:
+Pawn:
+2 spaces or 1 space for first move
+Only moves forward 1 space after first move
+Can move diagonal to kill another piece
+If pawn makes it to the other end of the board, they can substitute it for any piece they want even if it’s already on the board
+Rook:
+Can move any number of spaces horizontally or vertically
+Bishop:
+Can move any number of spaces diagonally
+Knight:
+Moves in an “L” pattern. 3 spaces and then 2 spaces perpendicular to the first 3 spaces
+Can jump over pieces
+Queen: 
+Can move any number of spaces horizontally, vertically, or diagonally
+King:
+Can only move 1 space in any direction
+If opposing piece has the ability to kill the King, it is in check
+To get out of check, the King must move to another valid space or another one of your pieces must be block the opposing piece from being able to kill your King
+Check mate is when no moves are left and King is dead
+
+
+
+
