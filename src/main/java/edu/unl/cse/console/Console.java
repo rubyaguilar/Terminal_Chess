@@ -161,8 +161,7 @@ public class Console {
      * <p>By working with a smaller text area, there will be less math needed in your code to assure proper text
      * placement, and you'll also be able to separate concerns in your code better.</p>
      */
-    public static class Box
-            implements Iterable<String> {
+    public static class Box implements Iterable<String> {
         final int numberOfRows;
         final int numberOfColumns;
         private StringBuilder[] canvas;
