@@ -79,8 +79,6 @@ public class Board {
 					// place white king
 					currentBoard[i][j] = "\u265A";
 				}
-				
-				
 				else {
 					currentBoard[i][j] = LETTERS[j] + NUMBERS[i];
 				}
@@ -111,13 +109,6 @@ public class Board {
 
 	/**
 	 * Given 2 coordinates on the board, swap the objects on the board
-	 * @param row1 		- row of the original piece
-	 * @param column1	- column of the original piece
-	 * @param row2		- row of the end spot
-	 * @param column2	- column of the end spot
-	 */
-	/**
-	 * Given 2 coordinates on the board, swap the objects on the board
 	 * @param l1 - coordinates of the original piece
 	 * @param l2 - coordinates of the end spot
 	 */
@@ -129,4 +120,10 @@ public class Board {
 		this.swap(row1, column1, row2, column2);
 	}
 	
+	/** 
+	 * Given these coordinates, return the string at that spot
+	 */
+	public String getSpot(Location l) {
+		return currentBoard[l.getRow()][l.getColumn()];
+	}
 }
