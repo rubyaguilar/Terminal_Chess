@@ -167,7 +167,7 @@ public class Console {
         private StringBuilder[] canvas;
         private final String emptyRow;
 
-        public Box(int rows, int columns) {
+        Box(int rows, int columns) {
             numberOfRows = rows;
             numberOfColumns = columns;
             canvas = new StringBuilder[rows];
@@ -255,7 +255,7 @@ public class Console {
             }
         }
 
-        public void initializeCanvas() {
+        private void initializeCanvas() {
             for (int i = 0; i < numberOfRows; i++) {
                 canvas[i] = new StringBuilder();
             }
