@@ -4,7 +4,7 @@ import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.board.ColorSet;
 import edu.unl.cse.csce361.board.Location;
 
-abstract class Piece {
+public abstract class Piece {
 	private ColorSet color;
 	private Location location;
 	private boolean status;
@@ -17,6 +17,7 @@ abstract class Piece {
 	
 	public abstract boolean move(int row, int column);
 	public abstract boolean move(Location location);
+	public abstract void kill(Location location);
 	
 	public ColorSet getColor() {
 		return color;
