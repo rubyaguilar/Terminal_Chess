@@ -30,12 +30,6 @@ public class Bishop extends Piece {
 		return true;
 	}
 
-	@Override
-	/*kill an opponent's piece which on that space where the bishop can move to*/
-	public void kill(Location location) {
-		// TODO Auto-generated method stub
-		if(location.getPiece().getColor()!=this.getColor())
-			location.getPiece().setStatus(false);
-	}
+	
 
 }
