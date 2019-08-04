@@ -13,6 +13,11 @@ public class Rook extends Piece {
 	@Override
 	public boolean move(int row, int column) {
 		// TODO Auto-generated method stub
+		Location originalocation = this.getLocation();
+		int originalRow = originalocation.getRow();
+		int originalColumn = originalocation.getColumn();
+		if(originalRow==row||originalColumn==column)
+			return true;
 		return false;
 	}
 
