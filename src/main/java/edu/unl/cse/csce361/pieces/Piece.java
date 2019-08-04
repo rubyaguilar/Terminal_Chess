@@ -7,10 +7,12 @@ import edu.unl.cse.csce361.board.Location;
 abstract class Piece {
 	private ColorSet color;
 	private Location location;
+	private boolean status;
 	
 	public Piece(ColorSet color, Location location) {
 		this.color = color;
 		this.location = location;
+		this.status = true;
 	}
 	
 	public abstract boolean move(int row, int column);
