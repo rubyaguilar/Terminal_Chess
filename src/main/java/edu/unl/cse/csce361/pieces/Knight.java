@@ -13,6 +13,11 @@ public class Knight extends Piece {
 	@Override
 	public boolean move(int row, int column) {
 		// TODO Auto-generated method stub
+		Location originalocation = this.getLocation();
+		int originalRow = originalocation.getRow();
+		int originalColumn = originalocation.getColumn();
+		if((Math.abs(row-originalRow))==2&&Math.abs(column-originalColumn)==1||(Math.abs(row-originalRow))==1&&Math.abs(column-originalColumn)==2)
+			return true;
 		return false;
 	}
 
