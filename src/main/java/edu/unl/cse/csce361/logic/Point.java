@@ -1,5 +1,5 @@
 package edu.unl.cse.csce361.logic;
-
+import  edu.unl.cse.csce361.pieces.Piece;
 
 /**
  * 
@@ -13,6 +13,7 @@ package edu.unl.cse.csce361.logic;
 
 
 public class Point {
+	Piece piece;
 	private String columnLetter; 
 	private int rowNumber;
 	
@@ -66,6 +67,12 @@ public class Point {
 	//The alternative is data validation at a higher level, which just sounds ugly 
 	
 	public boolean validateLocation(String point) {
+		boolean valid = false;
+		
+		while (valid == false) {
+			
+		}
+		
 		//FIXME: First test is to make sure there is only two characters 
 		
 		//FIXME: Next test is to make sure two characters are within the domain and range of board
@@ -84,24 +91,16 @@ public class Point {
 	
 	public int getColumnLetter() {
 		switch (this.columnLetter) {
-			case "a":
-				return 0;
-			case "b":
-				return 1;
-			case "c":
-				return 2;
-			case "d":
-				return 3;
-			case "e":
-				return 4;
-			case "f":
-				return 5;
-			case "g":
-				return 6;
-			case "h":
-				return 7;
+			case "a": return 0;
+			case "b": return 1;
+			case "c": return 2;
+			case "d": return 3;
+			case "e": return 4;
+			case "f": return 5;
+			case "g": return 6;
+			case "h": return 7;
+			default: return -1; //Is this a good idea?
 		}
-		return 0;
 	}
 	
 	/**

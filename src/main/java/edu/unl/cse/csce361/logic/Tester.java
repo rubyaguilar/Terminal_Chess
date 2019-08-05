@@ -16,7 +16,8 @@ public class Tester {
 		System.out.println("Instructions: \n1. Select a piece by entering its associated vertical letter followed by its associated horizontal number");
 		System.out.println("Example: What piece would you like move?: a6\n");
 		System.out.println("2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
-		System.out.println("Example: What where would you like to move?: h8\n");
+		System.out.println("Example: What where would you like to move?: h8");
+		System.out.println("*************************");
 	}
 	
 	public static void getMove() {
