@@ -22,7 +22,12 @@ public class Point {
 	 * The reason for my two constructors is for easy accessibility 
 	 * when using the Pointer class. 
 	 * 
-	 * Will think over to ensure robust 
+	 * Point(String userPoint) is intended to be used when entering 
+	 * a user's raw input. It will then call validateLocation method 
+	 * 
+	 * If validateLocation is successful, then it will 
+	 * construct an actual Point object using the following constructor
+	 * 
 	 * 
 	 * @param userPoint
 	 */
@@ -40,15 +45,6 @@ public class Point {
 	
 		
 	}
-	
-	/**
-	 * 
-	 * This is the real constructor, used within the previous constructor
-	 *  
-	 * 
-	 * @param lett
-	 * @param num
-	 */
 	
 	public Point(String lett, String num) {
 		this.columnLetter = lett.toLowerCase();
