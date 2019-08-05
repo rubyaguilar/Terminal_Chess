@@ -62,8 +62,8 @@ public class Point {
 	
 	//If the user enters a wrong input, they should continue to be probed for a valid input 
 	//through the validLocation because a wrong input does nothing for anyone. 
-	//It's best to encapsulate that responsibility into the valid location class
-	//The alternative is data validation at a higher level, which can result in ugly code. 
+	//It's best to encapsulate that responsibility into the validLocation method
+	//The alternative is data validation at a higher level, which just sounds ugly 
 	
 	public boolean validateLocation(String point) {
 		//FIXME: First test is to make sure there is only two characters 
