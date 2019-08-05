@@ -5,11 +5,7 @@ import java.util.Scanner;
 public class Tester {
 	
 	/**
-	 * 
-	 * This will 
-	 * 
-	 * @param letter
-	 * @param number
+	 * FIXME: also delete me, later tho
 	 */
 	
 	public static void welcome() {
@@ -22,45 +18,22 @@ public class Tester {
 	}
 	
 	
-	public static void start() {
-		welcome();
-		
+	public static void getMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("What piece would you like move?: ");
-		String tempPiece = scan.nextLine();
 		
+		String tempPiece = scan.nextLine();
 		Point piece = new Point(tempPiece);
 			
 		
-		
-				
-			
 		System.out.print("\nWhat where would you like to move?: ");
 		String desiredMove = scan.next();
 		Point move = new Point(desiredMove); //where they want to move 
 		
-		
-	}
-	
-	/**
-	 * 
-	 * Convert method will validate that the user 
-	 * piece and move are within the domain and range of the board
-	 * before 
-	 * 
-	 * @param letter
-	 * @param number
-	 */
-	
-	public static String[] convert(String s) {
-		String[] tempArray = new String[2];
-		//tempArray[0] = row
-		//tempArray[1] = column
-			
-		return tempArray;
 	}
 
 	public static void main(String[] args) {
-		start();
+		welcome();
+		getMove();
 	}
 }

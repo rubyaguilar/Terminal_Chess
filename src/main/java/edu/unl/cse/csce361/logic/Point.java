@@ -29,7 +29,9 @@ public class Point {
 	
 	public Point(String userPoint) {
 		
-		//FIXME: Some sort of while loop is better
+		//FIXME: If a user enters incorrect input, should this be handled at the Point class?
+		//I think so. Inside the validateLocation. Will continue probing for a valid entry
+		//Just need to pass the responsibility over to it
 		if( !validateLocation(userPoint) ) {
 			System.out.println("Please enter a valid location: ");
 			
@@ -114,6 +116,4 @@ public class Point {
 	public int getRowNumber() {
 		return this.rowNumber-1;
 	}
-	
-
 }
