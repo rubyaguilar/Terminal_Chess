@@ -30,16 +30,15 @@ public class Point {
 	public Point(String userPoint) {
 		
 		//FIXME: If a user enters incorrect input, should this be handled at the Point class?
-		//I think so. Inside the validateLocation. Will continue probing for a valid entry
-		//Just need to pass the responsibility over to it
-		if( !validateLocation(userPoint) ) {
-			System.out.println("Please enter a valid location: ");
-			
-		} else {
+		//Answer: Yes, check comments above validateLocation method
+		
+		if( validateLocation(userPoint) ) {
 			String[] testArr = new String[2];
 			testArr = userPoint.split("");
 			Point p = new Point(testArr[0], testArr[1]);
-		}
+		} 
+	
+		
 	}
 	
 	/**
@@ -65,10 +64,15 @@ public class Point {
 	 * @return an array 
 	 */
 	
+	//If the user enters a wrong input, they should continue to be probed for a valid input 
+	//through the validLocation because a wrong input does nothing for anyone. 
+	//It's best to encapsulate that responsibility into the valid location class
+	//The alternative is data validation at a higher level, which can result in ugly code. 
+	
 	public boolean validateLocation(String point) {
 		//FIXME: First test is to make sure there is only two characters 
 		
-		//FIXME: Next test is to make sure it is within the domain of the 
+		//FIXME: Next test is to make sure two characters are within the domain and range of board
 		
 		return false;
 	}
