@@ -14,65 +14,52 @@ import  edu.unl.cse.csce361.pieces.Piece;
 
 public class Point {
 	Piece piece;
-	private String columnLetter; 
+	private int columnLetter; 
 	private int rowNumber;
 	
 	
 	/**
 	 * 
-	 * The reason for my two constructors is for easy accessibility 
-	 * when using the Pointer class. 
 	 * 
 	 * Point(String userPoint) is intended to be used when entering 
 	 * a user's raw input. It will then call validateLocation method 
 	 * 
 	 * If validateLocation is successful, then it will 
-	 * construct an actual Point object using the following constructor
+	 * construct an actual Point object using the setters
 	 * 
 	 * 
 	 * @param userPoint
 	 */
 	
 	public Point(String userPoint) {
-		
-		//FIXME: If a user enters incorrect input, should this be handled at the Point class?
-		//Answer: Yes, check comments above validateLocation method
-		
+		//FIXME: The logic for the getters should be used for the setters! duh! 
 		if( validateLocation(userPoint) ) {
-			String[] testArr = new String[2];
-			testArr = userPoint.split("");
-			Point p = new Point(testArr[0], testArr[1]);
+			String[] inputArr = new String[2]; //If it's valid the splitting it won't be a problem.
+			inputArr = userPoint.split("");
+			
+			setRowNumber(inputArr[1]); //setting the row number for point
+			
 		} 
-	
-		
 	}
 	
-	public Point(String lett, String num) {
-		this.columnLetter = lett.toLowerCase();
-		this.rowNumber = Integer.parseInt(num); 
-	}
 	
 	/**
 	 * 
 	 * This will take in the raw user input, used in Point(String s) 
-	 * and ensure that it is valid 
+	 * and ensure that it is valid (Two characters and within domain and range of board
 	 * 
 	 * @param point
 	 * @return an array 
 	 */
 	
-	//If the user enters a wrong input, they should continue to be probed for a valid input 
+	//The first reason is: why not? 
+	//The second is: if the user enters a wrong input, they should continue to be probed for a valid input 
 	//through the validLocation because a wrong input does nothing for anyone. 
 	//It's best to encapsulate that responsibility into the validLocation method
 	//The alternative is data validation at a higher level, which just sounds ugly 
 	
-	public boolean validateLocation(String point) {
+	public boolean validateLocation(String rawPoint) {
 		boolean valid = false;
-		
-		while (valid == false) {
-			
-		}
-		
 		//FIXME: First test is to make sure there is only two characters 
 		
 		//FIXME: Next test is to make sure two characters are within the domain and range of board
@@ -89,18 +76,39 @@ public class Point {
 	 * @return
 	 */
 	
-	public int getColumnLetter() {
-		switch (this.columnLetter) {
-			case "a": return 0;
-			case "b": return 1;
-			case "c": return 2;
-			case "d": return 3;
-			case "e": return 4;
-			case "f": return 5;
-			case "g": return 6;
-			case "h": return 7;
-			default: return -1; //Is this a good idea?
+	public void setColumnLetter(String stringLetter) {
+		//FIXME: Index the letter to the correct matrix value
+		switch (stringLetter) {
+		case "a":
+			setColumnLetter(0);
+			break;
+		case "b":
+			setColumnLetter(1);
+			break;
+		case "c":
+			setColumnLetter(2);
+			break;
+		case "d":
+			setColumnLetter(3);
+			break;
+		case "e":
+			setColumnLetter(4);
+			break;
+		case "f":
+			setColumnLetter(5);
+			break;
+		case "g":
+			setColumnLetter(6);
+			break;
+		case "h":
+			setColumnLetter(7);
+			break;
+		//Default isn't necessary because validateLocation already ensured validity
 		}
+	}
+	
+	public void setColumnLetter(int columnLetter) {
+		this.columnLetter = columnLetter;
 	}
 	
 	/**
@@ -111,8 +119,24 @@ public class Point {
 	 * 
 	 * @return
 	 */
+
+	public void setRowNumber(String stringNumber) {
+		this.rowNumber = Integer.parseInt(stringNumber);
+		this.rowNumber -= 1; //Indexing to the array
+	}
+	
+	public void setRowNumber(int rowNumber) {
+		this.rowNumber = rowNumber;
+	}
+	
+	public int getColumnLetter() {
+		return this.columnLetter;
+	}
+	
 	
 	public int getRowNumber() {
-		return this.rowNumber-1;
+		return this.rowNumber;
 	}
+	
+	
 }
