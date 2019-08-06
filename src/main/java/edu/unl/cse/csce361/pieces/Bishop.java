@@ -11,12 +11,14 @@ public class Bishop extends Piece {
 	}
 
 	@Override
+	/*check if the piece can move to the direction that the player wants to be
+	 * so for the bishop piece, it can move any distance*/
 	public boolean move(int row, int column) {
 		// TODO Auto-generated method stub
 		Location originalocation = this.getLocation();
 		int originalRow = originalocation.getRow();
 		int originalColumn = originalocation.getColumn();
-		if(row-originalRow==column-originalColumn||row-originalRow==-(column-originalColumn))
+		if(Math.abs(row-originalRow)==Math.abs(column-originalColumn))
 			return true;
 		return false;
 	}
@@ -27,5 +29,7 @@ public class Bishop extends Piece {
 		
 		return true;
 	}
+
+	
 
 }
