@@ -23,13 +23,11 @@ public class Tester {
 	public static void getMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("What piece would you like move?: ");
-		
 		String tempPiece = scan.nextLine();
 		Point piece = new Point(tempPiece); //piece they want to move
-			
 		
-		System.out.print("\nWhat where would you like to move?: ");
-		String desiredMove = scan.next();
+		System.out.print("What where would you like to move?: ");
+		String desiredMove = scan.nextLine();
 		Point move = new Point(desiredMove); //where they want to move 
 	}
 

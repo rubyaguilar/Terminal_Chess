@@ -1,4 +1,6 @@
 package edu.unl.cse.csce361.logic;
+import java.util.Scanner;
+
 import  edu.unl.cse.csce361.pieces.Piece;
 
 /**
@@ -32,13 +34,11 @@ public class Point {
 	 */
 	
 	public Point(String userPoint) {
-		//FIXME: The logic for the getters should be used for the setters! duh! 
 		if( validateLocation(userPoint) ) {
 			String[] inputArr = new String[2]; //If it's valid the splitting it won't be a problem.
 			inputArr = userPoint.split("");
-			
-			setRowNumber(inputArr[1]); //setting the row number for point
-			
+			setColumnLetter(inputArr[0]); //setting the indexed column letter 
+			setRowNumber(inputArr[1]); //setting the indexed row number
 		} 
 	}
 	
@@ -51,33 +51,56 @@ public class Point {
 	 * @param point
 	 * @return an array 
 	 */
-	
-	//The first reason is: why not? 
-	//The second is: if the user enters a wrong input, they should continue to be probed for a valid input 
-	//through the validLocation because a wrong input does nothing for anyone. 
-	//It's best to encapsulate that responsibility into the validLocation method
-	//The alternative is data validation at a higher level, which just sounds ugly 
-	
 	public boolean validateLocation(String rawPoint) {
 		boolean valid = false;
-		//FIXME: First test is to make sure there is only two characters 
+		String testArr[] = null;
+		testArr = rawPoint.split("");
+		if( testArr[0].contentEquals("") || testArr.length > 2)  { 
+			incorrectInput();
+		} else {
+			valid = true;
+		}
 		
-		//FIXME: Next test is to make sure two characters are within the domain and range of board
 		
-		return false;
+		
+		return valid;
+	}
+	
+	public void incorrectInput() {
+		Scanner scan = new Scanner(System.in);
+		String input = "";
+		
+		do {
+			System.out.println("Please enter a valid input: ");
+			input = scan.nextLine();
+		} while(input.isEmpty());
+		validateLocation(input);
+		scan.close();
+	}
+	
+	public Piece getPiece() {
+		return piece;
+	}
+
+	public void setPiece(Piece piece) {
+		this.piece = piece;
+	}
+	
+	public void setPoint(int row, int column) {
+		this.rowNumber = row;
+		this.columnLetter = column;
 	}
 	
 	/**
 	 * 
 	 * The board is conceptually represented by a 
-	 * letter-based vertical axis. The 2D-array 
-	 * can be accessed by the returned value. 
+	 * letter-based vertical axis. columnLetter is set 
+	 * with respect to the 2D array board structure
 	 * 
 	 * @return
 	 */
 	
 	public void setColumnLetter(String stringLetter) {
-		//FIXME: Index the letter to the correct matrix value
 		switch (stringLetter) {
 		case "a":
 			setColumnLetter(0);
@@ -114,15 +137,15 @@ public class Point {
 	/**
 	 * 
 	 * The board is conceptually represented by a 
-	 * number-based horizontal axis. The 2D-array 
-	 * can be accessed by the returned value. 
+	 * number-based horizontal axis. rowNumber is set 
+	 * with respect to the 2D array board structure 
 	 * 
 	 * @return
 	 */
 
 	public void setRowNumber(String stringNumber) {
 		this.rowNumber = Integer.parseInt(stringNumber);
-		this.rowNumber -= 1; //Indexing to the array
+		this.rowNumber -= 1; //Indexing for array
 	}
 	
 	public void setRowNumber(int rowNumber) {
@@ -132,7 +155,6 @@ public class Point {
 	public int getColumnLetter() {
 		return this.columnLetter;
 	}
-	
 	
 	public int getRowNumber() {
 		return this.rowNumber;
