@@ -34,12 +34,10 @@ public class Point {
 	 */
 	
 	public Point(String userPoint) {
-		if( validateLocation(userPoint) ) {
 			String[] inputArr = new String[2]; //If it's valid the splitting it won't be a problem.
-			inputArr = userPoint.split("");
+			inputArr = validateLocation(userPoint);
 			setColumnLetter(inputArr[0]); //setting the indexed column letter 
 			setRowNumber(inputArr[1]); //setting the indexed row number
-		} 
 	}
 	
 	
@@ -51,19 +49,35 @@ public class Point {
 	 * @param point
 	 * @return an array 
 	 */
-	public boolean validateLocation(String rawPoint) {
-		boolean valid = false;
+	public String[] validateLocation(String rawPoint) {
+		String regex ="^[a-h][1-8]$";
+		String againPoint = null;
 		String testArr[] = null;
 		testArr = rawPoint.split("");
-		if( testArr[0].contentEquals("") || testArr.length > 2)  { 
-			incorrectInput();
-		} else {
-			valid = true;
+		boolean valid=false;
+		
+		while(valid==false) {
+			Scanner sc = new Scanner(System.in);
+			if( testArr.length <= 0){ 
+				System.out.println("Your input is null. Please enter a vaild input:");
+			} 
+			else if( testArr.length > 2) {
+				System.out.println("Your input length is out of range. Please enter a vaild input:");
+			}
+			else if (testArr.length != 2) {
+				System.out.println("Your input length isn't match the 2D rules. Please enter a vaild input:");
+			}
+			else if( testArr.length == 2 && againPoint.matches(regex)==false)
+				System.out.println("Your input is invaild. Please enter a vaild input:");
+				
+			else {
+				valid = true;
+				return testArr;
+			}
+			againPoint = sc.nextLine();
+			testArr = againPoint.split("");
 		}
-		
-		
-		
-		return valid;
+		return testArr;
 	}
 	
 	public void incorrectInput() {
