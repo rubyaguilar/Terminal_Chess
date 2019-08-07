@@ -18,7 +18,7 @@ public class Bishop extends Piece {
 		Location originalocation = this.getLocation();
 		int originalRow = originalocation.getRow();
 		int originalColumn = originalocation.getColumn();
-		if(row-originalRow==Math.abs(column-originalColumn))
+		if(Math.abs(row-originalRow)==Math.abs(column-originalColumn))
 			return true;
 		return false;
 	}

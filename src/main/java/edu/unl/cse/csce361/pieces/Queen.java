@@ -13,6 +13,13 @@ public class Queen extends Piece {
 	@Override
 	public boolean move(int row, int column) {
 		// TODO Auto-generated method stub
+		Location originalocation = this.getLocation();
+		int originalRow = originalocation.getRow();
+		int originalColumn = originalocation.getColumn();
+		if(Math.abs(row-originalRow)==Math.abs(column-originalColumn))
+			return true;
+		if(originalRow==row||originalColumn==column)
+			return true;
 		return false;
 	}
 
@@ -20,6 +27,12 @@ public class Queen extends Piece {
 	public boolean move(Location location) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void kill(Location location) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
