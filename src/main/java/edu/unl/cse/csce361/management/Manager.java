@@ -21,15 +21,20 @@ public class Manager {
 		System.out.println("*************************\n");
 	}
 	
-	public static void getMove() {
+	public Point getPieceMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nWhat piece would you like move?: ");
-		String tempPiece = scan.nextLine();
-		Point piece = new Point(tempPiece); //piece they want to move
-		
-		System.out.print("What where would you like to move?: ");
-		String desiredMove = scan.nextLine();
-		Point move = new Point(desiredMove); //where they want to move 
+		String stringPiece = scan.nextLine();
+		Point pieceMove = new Point(stringPiece); //piece they want to move
+		return pieceMove;
+	}
+	
+	public Point getdesiredDestination() {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("\nWhat piece would you like move?: ");
+		String stringMove = scan.nextLine();
+		Point desiredMove = new Point(stringMove); //piece they want to move
+		return desiredMove;
 	}
 	
 	
@@ -40,10 +45,7 @@ public class Manager {
 		
 		
 		
-		Manager.welcome();
-		Board board = Board.getBoard();
-		board.printBoard();
-		Manager.getMove();
+		
 		
 	}
 	
