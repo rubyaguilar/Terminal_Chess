@@ -54,10 +54,6 @@ public class Manager {
 		
 		p1.setDesiredDestination(getdesiredDestination());
 		
-	
-		
-		
-		
 	}
 	
 }
