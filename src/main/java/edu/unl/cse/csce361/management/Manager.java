@@ -21,19 +21,21 @@ public class Manager {
 		System.out.println("*************************\n");
 	}
 	
-	public Point getPieceMove() {
+	public static Point getPieceMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nWhat piece would you like move?: ");
 		String stringPiece = scan.nextLine();
 		Point pieceMove = new Point(stringPiece); //piece they want to move
+		scan.close();
 		return pieceMove;
 	}
 	
-	public Point getdesiredDestination() {
+	public static Point getdesiredDestination() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nWhat piece would you like move?: ");
 		String stringMove = scan.nextLine();
 		Point desiredMove = new Point(stringMove); //piece they want to move
+		scan.close();
 		return desiredMove;
 	}
 	
@@ -43,7 +45,16 @@ public class Manager {
 		Player p1 = new Player(ColorSet.WHITE);
 		Player p2 = new Player(ColorSet.BLACK);
 		
+		Manager.welcome();
 		
+		Board board = Board.getBoard();
+		board.printBoard();
+		
+		p1.setPieceToMove(getPieceMove());
+		
+		p1.setDesiredDestination(getdesiredDestination());
+		
+	
 		
 		
 		

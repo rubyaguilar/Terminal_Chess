@@ -23,7 +23,7 @@ public class Player {
 	}
 
 
-	public static void setPieceToMove(Point pieceToMove) {
+	public void setPieceToMove(Point pieceToMove) {
 		Player.pieceToMove = pieceToMove;
 	}
 
@@ -33,7 +33,7 @@ public class Player {
 	}
 
 
-	public static void setDesiredDestination(Point desiredDestination) {
+	public void setDesiredDestination(Point desiredDestination) {
 		Player.desiredDestination = desiredDestination;
 	}
 	
