@@ -33,10 +33,6 @@ public class Manager {
 	}
 	
 	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		//TODO: Will need to change between player move. 
 		Player p1 = new Player(ColorSet.WHITE);
