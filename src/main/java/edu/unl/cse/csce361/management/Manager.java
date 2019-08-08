@@ -15,15 +15,15 @@ public class Manager {
 		System.out.println("*************************");
 		System.out.println("To begin, decide who the first player is. \nFirst player, select the piece you'd like to move.\n");
 		System.out.println("Instructions: \n1. Select a piece by entering its associated vertical letter followed by its associated horizontal number");
-		System.out.println("Example: What piece would you like move?: a6\n");
+		System.out.println("Example: What piece would you like move?: a2\n");
 		System.out.println("2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
 		System.out.println("Example: What where would you like to move?: h8");
-		System.out.println("*************************");
+		System.out.println("*************************\n");
 	}
 	
 	public static void getMove() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("What piece would you like move?: ");
+		System.out.print("\nWhat piece would you like move?: ");
 		String tempPiece = scan.nextLine();
 		Point piece = new Point(tempPiece); //piece they want to move
 		
@@ -38,15 +38,17 @@ public class Manager {
 	
 	
 	public static void main(String[] args) {
+		//TODO: Will need to change between player move. 
 		Player p1 = new Player(ColorSet.WHITE);
 		Player p2 = new Player(ColorSet.BLACK);
 		
 		
 		
 		Manager.welcome();
-		Manager.getMove();
 		Board board = Board.getBoard();
 		board.printBoard();
+		Manager.getMove();
+		
 	}
 	
 }
