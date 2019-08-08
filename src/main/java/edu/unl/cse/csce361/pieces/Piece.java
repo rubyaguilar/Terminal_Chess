@@ -2,25 +2,25 @@ package edu.unl.cse.csce361.pieces;
 
 import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.board.ColorSet;
-import edu.unl.cse.csce361.board.Location;
+import edu.unl.cse.csce361.logic.Point;
 
 public abstract class Piece {
 	private ColorSet color;
-	private Location location;
+	private Point point;
 	private boolean status;
 	
-	public Piece(ColorSet color, Location location) {
+	public Piece(ColorSet color, Point location) {
 		this.color = color;
-		this.location = location;
+		this.point = location;
 		this.status = true;
 	}
 	
 	public abstract boolean move(int row, int column);
-	public abstract boolean move(Location location);
+	public abstract boolean move(Point location);
 	
 	/*kill an opponent's piece which on that space where the piece can move to
 	 * the Pawn may override this method*/
-	public void kill(Location location) {
+	public void kill(Point location) {
 		// TODO Auto-generated method stub
 		if(location.getPiece().getColor()!=this.getColor())
 			location.getPiece().setStatus(false);
@@ -30,8 +30,8 @@ public abstract class Piece {
 		return color;
 	}
 	
-	public Location getLocation() {
-		return location;
+	public Point getPoint() {
+		return point;
 	}
 	
 	/**
@@ -41,8 +41,8 @@ public abstract class Piece {
 	 * 			false if already definitely invalid move
 	 */
 	// TODO: Rook/King may have to override this, with their unique move swap
-	protected boolean checkIfSpotOpen(Location location) {
-		String spot = Board.getBoard().getSpot(location);
+	protected boolean checkIfSpotOpen(Point point) {
+		String spot = Board.getBoard().getSpot(point);
 		
 		// split string on "" and will give each individual character
 		// "A6" array.size == 2

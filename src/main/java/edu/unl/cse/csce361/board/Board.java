@@ -1,5 +1,7 @@
 package edu.unl.cse.csce361.board;
 
+import edu.unl.cse.csce361.logic.Point;
+
 /**
  * Class utilizing the singleton pattern to represent a chess board
  */
@@ -112,18 +114,18 @@ public class Board {
 	 * @param l1 - coordinates of the original piece
 	 * @param l2 - coordinates of the end spot
 	 */
-	public void swap(Location l1, Location l2) {
-		int row1 = l1.getRow();
-		int column1 = l1.getColumn();
-		int row2 = l2.getRow();
-		int column2 = l2.getColumn();
+	public void swap(Point p1, Point p2) {
+		int row1 = p1.getRowNumber();
+		int column1 = p1.getColumnLetter();
+		int row2 = p2.getRowNumber();
+		int column2 = p2.getColumnLetter();
 		this.swap(row1, column1, row2, column2);
 	}
 	
 	/** 
 	 * Given these coordinates, return the string at that spot
 	 */
-	public String getSpot(Location l) {
-		return currentBoard[l.getRow()][l.getColumn()];
+	public String getSpot(Point p) {
+		return currentBoard[p.getRowNumber()][p.getColumnLetter()];
 	}
 }

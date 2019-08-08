@@ -59,16 +59,16 @@ public class Point {
 		while(valid==false) {
 			Scanner sc = new Scanner(System.in);
 			if( testArr.length <= 0){ 
-				System.out.println("Your input is null. Please enter a vaild input:");
+				System.out.println("Your input is null. \nPlease enter a vaild input:");
 			} 
 			else if( testArr.length > 2) {
-				System.out.println("Your input length is out of range. Please enter a vaild input:");
+				System.out.println("Your input length is out of range. \nPlease enter a vaild input:");
 			}
 			else if (testArr.length != 2) {
-				System.out.println("Your input length isn't match the 2D rules. Please enter a vaild input:");
+				System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
 			}
 			else if( testArr.length == 2 && againPoint.matches(regex)==false)
-				System.out.println("Your input is invaild. Please enter a vaild input:");
+				System.out.println("Your input is invaild. \nPlease enter a vaild input:");
 				
 			else {
 				valid = true;
@@ -78,18 +78,6 @@ public class Point {
 			testArr = againPoint.split("");
 		}
 		return testArr;
-	}
-	
-	public void incorrectInput() {
-		Scanner scan = new Scanner(System.in);
-		String input = "";
-		
-		do {
-			System.out.println("Please enter a valid input: ");
-			input = scan.nextLine();
-		} while(input.isEmpty());
-		validateLocation(input);
-		scan.close();
 	}
 	
 	public Piece getPiece() {
