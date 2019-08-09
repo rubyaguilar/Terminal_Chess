@@ -20,10 +20,10 @@ public abstract class Piece {
 	
 	/*kill an opponent's piece which on that space where the piece can move to
 	 * the Pawn may override this method*/
-	public void kill(Point location) {
+	public void kill(Point point) {
 		// TODO Auto-generated method stub
-		if(location.getPiece().getColor()!=this.getColor())
-			location.getPiece().setStatus(false);
+		if(point.getPiece().getColor()!=this.getColor())
+			point.getPiece().setStatus(false);
 	}
 	
 	public ColorSet getColor() {
