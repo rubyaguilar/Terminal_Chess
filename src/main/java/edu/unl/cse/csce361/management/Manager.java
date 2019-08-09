@@ -21,18 +21,23 @@ public class Manager {
 		System.out.println("*************************\n");
 	}
 	
+	public static void startGame() {
+		
+		
+	}
+	
 	public static Point getPieceMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nWhat piece would you like move?: ");
 		String stringPiece = scan.nextLine();
 		Point pieceMove = new Point(stringPiece); //piece they want to move
-		scan.close();
+		
 		return pieceMove;
 	}
 	
 	public static Point getdesiredDestination() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\nWhat piece would you like move?: ");
+		System.out.print("\nWhere would you like to move?: ");
 		String stringMove = scan.nextLine();
 		Point desiredMove = new Point(stringMove); //piece they want to move
 		scan.close();
@@ -40,40 +45,25 @@ public class Manager {
 	}
 	
 	
-	//Using this for the stragety
+	/**
+	 * I will use this to implement the strategy
+	 * design for the pieces class. 
+	 * 
+	 */
+	
 	public void pieceRun() {
 		while(true) {
 			
 		}
 	}
 	
-	public void playerTurn() {
-		
-	}
-	
-	
-	
-	
 	public static void main(String[] args) {
-		Player one = Player.getInstance();
-		one.setPlayerName("Ruben");
-		System.out.println(one.getColor() + one.getPlayerName());
-		
-		Player two = Player.getInstance();
-		two.setPlayerName("Aguilar");
-		System.out.println(two.getColor() + two.getPlayerName());
-		
-		System.out.println(one.getPlayerName());
-		
-
-	
-		
-		
-		
-		
-		
-		
+		Manager.welcome();	
+		Board board = Board.getBoard();
+		board.printBoard();
+		Manager.getPieceMove();
 		
 	}
+	
 	
 }
