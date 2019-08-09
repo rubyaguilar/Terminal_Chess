@@ -62,6 +62,8 @@ public class Manager {
 		Board board = Board.getBoard();
 		board.printBoard();
 		Manager.getPieceMove();
+		//
+		//new p
 		
 	}
 	
