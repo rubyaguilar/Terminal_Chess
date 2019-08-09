@@ -53,7 +53,7 @@ public class Point {
 		String regex ="^[a-h][1-8]$";
 		String againPoint = null;
 		String testArr[] = null;
-		testArr = rawPoint.split("");
+		//testArr = rawPoint.split("");
 		boolean valid=false;
 		
 		while(valid==false) {

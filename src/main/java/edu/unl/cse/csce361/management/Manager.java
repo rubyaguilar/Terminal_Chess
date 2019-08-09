@@ -15,9 +15,9 @@ public class Manager {
 		System.out.println("*************************");
 		System.out.println("To begin, decide who the first player is. \nFirst player, select the piece you'd like to move.\n");
 		System.out.println("Instructions: \n1. Select a piece by entering its associated vertical letter followed by its associated horizontal number");
-		System.out.println("Example: What piece would you like move?: a2\n");
+		System.out.println("Example: What piece would you like move?: a2 (equal to a pawn)\n");
 		System.out.println("2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
-		System.out.println("Example: What where would you like to move?: h8");
+		System.out.println("Example: What where would you like to move?: a3 (moving the pawn forward one)");
 		System.out.println("*************************\n");
 	}
 	
@@ -40,19 +40,39 @@ public class Manager {
 	}
 	
 	
+	//Using this for the stragety
+	public void pieceRun() {
+		while(true) {
+			
+		}
+	}
+	
+	public void playerTurn() {
+		
+	}
+	
+	
+	
+	
 	public static void main(String[] args) {
-		//TODO: Will need to change between player move. 
-		Player p1 = new Player(ColorSet.WHITE);
-		Player p2 = new Player(ColorSet.BLACK);
+		Player one = Player.getInstance();
+		one.setPlayerName("Ruben");
+		System.out.println(one.getColor() + one.getPlayerName());
 		
-		Manager.welcome();
+		Player two = Player.getInstance();
+		two.setPlayerName("Aguilar");
+		System.out.println(two.getColor() + two.getPlayerName());
 		
-		Board board = Board.getBoard();
-		board.printBoard();
+		System.out.println(one.getPlayerName());
 		
-		p1.setPieceToMove(getPieceMove());
+
+	
 		
-		p1.setDesiredDestination(getdesiredDestination());
+		
+		
+		
+		
+		
 		
 	}
 	
