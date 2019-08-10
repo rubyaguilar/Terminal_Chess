@@ -29,6 +29,7 @@ public class Manager {
 		}
 	}
 	
+	//including asking the player the next step he/she want to take and print the new board 
 	public static void playerTurn(Player p,Board board) {
 		System.out.println(p.getPlayerName()+": which piece would you like to move?");
 		Scanner a= new Scanner(System.in);
@@ -39,6 +40,7 @@ public class Manager {
 		String dd = b.nextLine();
 		Point desiredDestination = new Point(dd);
 		board.swap(piecetoMove, desiredDestination);
+		board.printBoard();
 	}
 	
 	
@@ -58,8 +60,8 @@ public class Manager {
 		System.out.println(two.getColor() + two.getPlayerName());
 		
 		playerTurn(one,board);
-		board.printBoard();
 		
+		playerTurn(two,board);
 
 	
 		
