@@ -1,28 +1,29 @@
 package edu.unl.cse.csce361.pieces;
 
 import edu.unl.cse.csce361.board.ColorSet;
-import edu.unl.cse.csce361.board.Location;
+import edu.unl.cse.csce361.logic.Point;
+
 
 public class Rook extends Piece {
 
-	public Rook(ColorSet color, Location location) {
-		super(color, location);
+	public Rook(ColorSet color, Point Point) {
+		super(color, Point);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean move(int row, int column) {
 		// TODO Auto-generated method stub
-		Location originalocation = this.getLocation();
-		int originalRow = originalocation.getRow();
-		int originalColumn = originalocation.getColumn();
+		Point originaPoint = this.getPoint();
+		int originalRow = originaPoint.getRowNumber();
+		int originalColumn = originaPoint.getColumnLetter();
 		if(originalRow==row||originalColumn==column)
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean move(Location location) {
+	public boolean move(Point Point) {
 		// TODO Auto-generated method stub
 		return false;
 	}
