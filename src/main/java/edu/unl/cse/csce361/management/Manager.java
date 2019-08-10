@@ -33,8 +33,40 @@ public class Manager {
 	}
 	
 	
-	public static void playerTurn() {
-		
+	public static void playerTurn(Player p1,Player p2,Board board) {
+		int step=1;
+		Point piecetoMove;
+		Point desiredDestination;
+		Point checkedDestination;
+		Piece piece;
+		while(true) {
+		if(step%2==1) {
+			piecetoMove = validationMove(p1);
+			desiredDestination = validationDestination();
+			piece = board.getPiece(piecetoMove);
+		    checkedDestination = checkDestination(piece,desiredDestination);
+		    board.swap(piecetoMove, checkedDestination);
+		    board.printBoard();
+		}
+		else {
+			piecetoMove = validationMove(p2);
+			desiredDestination = validationDestination();
+			piece = board.getPiece(piecetoMove);
+		    checkedDestination = checkDestination(piece,desiredDestination);
+		    board.swap(piecetoMove, checkedDestination);
+		    board.printBoard();
+		}
+		step++;
+		}
+	}
+	
+	public static Point checkDestination(Piece p, Point d) {
+		while(p.move(d.getRowNumber(),d.getColumnLetter())==false) {
+			System.out.println("Your step is invalid for the piece you want to move.Please take another valid step!\n");
+			Scanner sc= new Scanner(System.in);
+			d=validationDestination();	
+		}
+		return d;
 		
 	}
 	
@@ -46,8 +78,8 @@ public class Manager {
 		return piecetoMove;
 	}
 	
-	public static Point validationDestination(Player p) {
-		System.out.println(p.getPlayerName()+": where would you like to move the piece to?");
+	public static Point validationDestination() {
+		System.out.println("where would you like to move the piece to?");
 		Scanner b= new Scanner(System.in);
 		String dd = b.nextLine();
 		Point desiredDestination = new Point(dd);
@@ -70,11 +102,7 @@ public class Manager {
 		two.setPlayerName("Aguilar");
 		System.out.println(two.getColor() + two.getPlayerName());
 		
-		Point piecetoMove = validationMove(one);
-		Point desiredDestination = validationDestination(one);
-	
-		
-		
+		playerTurn(one,two,board);
 		
 		
 		
