@@ -29,18 +29,25 @@ public class Manager {
 		}
 	}
 	
-	//including asking the player the next step he/she want to take and print the new board 
+	
 	public static void playerTurn(Player p,Board board) {
+		
+	}
+	
+	public static Point validationMove(Player p) {
 		System.out.println(p.getPlayerName()+": which piece would you like to move?");
 		Scanner a= new Scanner(System.in);
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm);
+		return piecetoMove;
+	}
+	
+	public static Point validationDestination(Player p) {
 		System.out.println(p.getPlayerName()+": where would you like to move the piece to?");
 		Scanner b= new Scanner(System.in);
 		String dd = b.nextLine();
 		Point desiredDestination = new Point(dd);
-		board.swap(piecetoMove, desiredDestination);
-		board.printBoard();
+		return desiredDestination;
 	}
 	
 	
@@ -59,10 +66,9 @@ public class Manager {
 		two.setPlayerName("Aguilar");
 		System.out.println(two.getColor() + two.getPlayerName());
 		
-		playerTurn(one,board);
 		
-		playerTurn(two,board);
-
+		Point piecetoMove = validationMove(one);
+		Point desiredDestination = validationDestination(one);
 	
 		
 		
