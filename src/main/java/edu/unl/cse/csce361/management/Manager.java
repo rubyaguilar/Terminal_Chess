@@ -29,8 +29,16 @@ public class Manager {
 		}
 	}
 	
-	public void playerTurn() {
-		
+	public static void playerTurn(Player p,Board board) {
+		System.out.println(p.getPlayerName()+": which piece would you like to move?");
+		Scanner a= new Scanner(System.in);
+		String pm = a.nextLine();
+		Point piecetoMove = new Point(pm);
+		System.out.println(p.getPlayerName()+": where would you like to move the piece to?");
+		Scanner b= new Scanner(System.in);
+		String dd = b.nextLine();
+		Point desiredDestination = new Point(dd);
+		board.swap(piecetoMove, desiredDestination);
 	}
 	
 	
@@ -49,13 +57,8 @@ public class Manager {
 		two.setPlayerName("Aguilar");
 		System.out.println(two.getColor() + two.getPlayerName());
 		
-		System.out.println(one.getPlayerName()+": which piece would you like to move?");
-		Scanner sc= new Scanner(System.in);
-		Point piecetoMove = new Point(sc.nextLine());
-		System.out.println("which the desired destination would you like this piece to move to?");
-		Point desiredDestination = new Point(sc.nextLine());
-		
-		
+		playerTurn(one,board);
+		board.printBoard();
 		
 
 	
