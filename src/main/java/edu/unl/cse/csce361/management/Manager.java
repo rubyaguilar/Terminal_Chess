@@ -1,5 +1,5 @@
 package edu.unl.cse.csce361.management;
-
+import edu.unl.cse.csce361.board.*;
 import java.util.Scanner;
 
 import edu.unl.cse.csce361.board.Board;
@@ -8,7 +8,6 @@ import edu.unl.cse.csce361.board.Player;
 import edu.unl.cse.csce361.logic.Point;
 
 public class Manager {
-
 	public static void welcome() {
 		System.out.println("*************************");
 		System.out.println("Welcome to CSCE361 Chess!");
@@ -21,23 +20,6 @@ public class Manager {
 		System.out.println("*************************\n");
 	}
 	
-	public static Point getPieceMove() {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("\nWhat piece would you like move?: ");
-		String stringPiece = scan.nextLine();
-		Point pieceMove = new Point(stringPiece); //piece they want to move
-		scan.close();
-		return pieceMove;
-	}
-	
-	public static Point getdesiredDestination() {
-		Scanner scan = new Scanner(System.in);
-		System.out.print("\nWhat piece would you like move?: ");
-		String stringMove = scan.nextLine();
-		Point desiredMove = new Point(stringMove); //piece they want to move
-		scan.close();
-		return desiredMove;
-	}
 	
 	
 	//Using this for the stragety
@@ -55,6 +37,10 @@ public class Manager {
 	
 	
 	public static void main(String[] args) {
+		welcome();
+		
+		Board board = Board.getBoard();
+		board.printBoard();
 		Player one = Player.getInstance();
 		one.setPlayerName("Ruben");
 		System.out.println(one.getColor() + one.getPlayerName());
@@ -63,7 +49,13 @@ public class Manager {
 		two.setPlayerName("Aguilar");
 		System.out.println(two.getColor() + two.getPlayerName());
 		
-		System.out.println(one.getPlayerName());
+		System.out.println(one.getPlayerName()+": which piece would you like to move?");
+		Scanner sc= new Scanner(System.in);
+		Point piecetoMove = new Point(sc.nextLine());
+		System.out.println("which the desired destination would you like this piece to move to?");
+		Point desiredDestination = new Point(sc.nextLine());
+		
+		
 		
 
 	
