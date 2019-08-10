@@ -1,6 +1,8 @@
 package edu.unl.cse.csce361.board;
 
 import edu.unl.cse.csce361.logic.Point;
+import edu.unl.cse.csce361.pieces.*;
+
 
 /**
  * Class utilizing the singleton pattern to represent a chess board
@@ -8,7 +10,6 @@ import edu.unl.cse.csce361.logic.Point;
 
 public class Board {
 	private static Board instance;
-
 	private static final String[] LETTERS = { "A", "B", "C", "D", "E", "F", "G", "H" };
 	private static final String[] NUMBERS = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
@@ -37,6 +38,10 @@ public class Board {
 		if (instance == null) {
 			instance = new Board();
 		} 
+		return instance;
+	}
+
+	public static Board getInstance() {
 		return instance;
 	}
 
@@ -127,5 +132,39 @@ public class Board {
 	 */
 	public String getSpot(Point p) {
 		return currentBoard[p.getRowNumber()][p.getColumnLetter()];
+	}
+
+	public Piece getPiece(Point p)
+	{
+		Piece piece = null;
+		String str = getSpot(p);
+		switch(str) {
+		case "\u2654":
+			piece = new King(ColorSet.WHITE,p);
+		case "\u2655":
+			piece = new Queen(ColorSet.WHITE,p);
+		case "\u2656":
+			piece = new Rook(ColorSet.WHITE,p);
+		case "\u2657":
+			piece = new Bishop(ColorSet.WHITE,p);
+		case "\u2658":
+			piece = new Knight(ColorSet.WHITE,p);
+		case "\u2659":
+			piece = new Pawn(ColorSet.WHITE,p);
+		case "\u265A":
+			piece = new King(ColorSet.BLACK,p);
+		case "\u265B":
+			piece = new Queen(ColorSet.BLACK,p);
+		case "\u265C":
+			piece = new Rook(ColorSet.BLACK,p);
+		case "\u265D":
+			piece = new Bishop(ColorSet.BLACK,p);
+		case "\u265E":
+			piece = new Knight(ColorSet.BLACK,p);
+		case "\u265F":
+			piece = new Pawn(ColorSet.BLACK,p);
+		
+		}
+		return piece;
 	}
 }
