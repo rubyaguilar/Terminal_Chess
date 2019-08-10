@@ -3,8 +3,6 @@ package edu.unl.cse.csce361.management;
 import java.util.Scanner;
 
 import edu.unl.cse.csce361.board.Board;
-import edu.unl.cse.csce361.board.ColorSet;
-import edu.unl.cse.csce361.board.Player;
 import edu.unl.cse.csce361.logic.Point;
 
 public class Manager {
@@ -62,8 +60,11 @@ public class Manager {
 		Board board = Board.getBoard();
 		board.printBoard();
 		Manager.getPieceMove();
-		//
-		//new p
+		
+		//Get the first player name
+		//get second player name 
+		//ask first player for their move
+		//if valid move, swap
 		
 	}
 	
