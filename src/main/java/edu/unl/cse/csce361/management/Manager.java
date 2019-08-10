@@ -6,6 +6,7 @@ import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.board.ColorSet;
 import edu.unl.cse.csce361.board.Player;
 import edu.unl.cse.csce361.logic.Point;
+import edu.unl.cse.csce361.pieces.Piece;
 
 public class Manager {
 	public static void welcome() {
@@ -26,11 +27,14 @@ public class Manager {
 	public void pieceRun() {
 		while(true) {
 			
+			
+			
 		}
 	}
 	
 	
-	public static void playerTurn(Player p,Board board) {
+	public static void playerTurn() {
+		
 		
 	}
 	
@@ -66,11 +70,9 @@ public class Manager {
 		two.setPlayerName("Aguilar");
 		System.out.println(two.getColor() + two.getPlayerName());
 		
-		
 		Point piecetoMove = validationMove(one);
 		Point desiredDestination = validationDestination(one);
 	
-		
 		
 		
 		
