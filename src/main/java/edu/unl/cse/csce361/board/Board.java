@@ -51,6 +51,7 @@ public class Board {
 				
 				if (i == 1) {
 					// when on second row, set whole row to white pawns
+					//put player2 points-piece into their map
 					currentBoard[i][j] = "\u2659";
 				} else if (i == 6) {
 					// when on second to last row, set whole row to black pawns

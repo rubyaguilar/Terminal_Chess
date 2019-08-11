@@ -1,6 +1,10 @@
 package edu.unl.cse.csce361.board;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import edu.unl.cse.csce361.logic.Point;
+import edu.unl.cse.csce361.pieces.Piece;
 
 /**
  * 	Bare bones to a player class
@@ -13,6 +17,7 @@ public class Player {
 	private String playerName;
 	private Point pieceToMove;
 	private Point desiredDestination;
+	private Map<Point, Piece> pieceLocations = new HashMap<Point, Piece>();
 	static {
 		instances[0] = new Player(ColorSet.WHITE);
 		instances[1] = new Player(ColorSet.BLACK);

@@ -3,8 +3,6 @@ import edu.unl.cse.csce361.board.*;
 import java.util.Scanner;
 
 import edu.unl.cse.csce361.board.Board;
-import edu.unl.cse.csce361.board.ColorSet;
-import edu.unl.cse.csce361.board.Player;
 import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
@@ -21,9 +19,36 @@ public class Manager {
 		System.out.println("*************************\n");
 	}
 	
+	public static void startGame() {
+		
+		
+	}
+	
+	public static Point getPieceMove() {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("\nWhat piece would you like move?: ");
+		String stringPiece = scan.nextLine();
+		Point pieceMove = new Point(stringPiece); //piece they want to move
+		
+		return pieceMove;
+	}
+	
+	public static Point getdesiredDestination() {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("\nWhere would you like to move?: ");
+		String stringMove = scan.nextLine();
+		Point desiredMove = new Point(stringMove); //piece they want to move
+		scan.close();
+		return desiredMove;
+	}
 	
 	
-	//Using this for the stragety
+	/**
+	 * I will use this to implement the strategy
+	 * design for the pieces class. 
+	 * 
+	 */
+	
 	public void pieceRun() {
 		while(true) {
 			
@@ -106,7 +131,12 @@ public class Manager {
 		
 		
 		
+		//Get the first player name
+		//get second player name 
+		//ask first player for their move
+		//if valid move, swap
 		
 	}
+	
 	
 }

@@ -15,7 +15,6 @@ import  edu.unl.cse.csce361.pieces.Piece;
 
 
 public class Point {
-	Piece piece;
 	private int columnLetter; 
 	private int rowNumber;
 	
@@ -79,14 +78,6 @@ public class Point {
 			
 		}
 		return testArr;
-	}
-	
-	public Piece getPiece() {
-		return piece;
-	}
-
-	public void setPiece(Piece piece) {
-		this.piece = piece;
 	}
 	
 	public void setPoint(int row, int column) {

@@ -18,14 +18,6 @@ public abstract class Piece {
 	public abstract boolean move(int row, int column);
 	public abstract boolean move(Point location);
 	
-	/*kill an opponent's piece which on that space where the piece can move to
-	 * the Pawn may override this method*/
-	public void kill(Point point) {
-		// TODO Auto-generated method stub
-		if(point.getPiece().getColor()!=this.getColor())
-			point.getPiece().setStatus(false);
-	}
-	
 	public ColorSet getColor() {
 		return color;
 	}
