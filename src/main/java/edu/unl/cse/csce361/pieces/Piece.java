@@ -1,7 +1,7 @@
 package edu.unl.cse.csce361.pieces;
 
 import edu.unl.cse.csce361.board.Board;
-import edu.unl.cse.csce361.board.ColorSet;
+import edu.unl.cse.csce361.logic.ColorSet;
 import edu.unl.cse.csce361.logic.Point;
 
 public abstract class Piece {

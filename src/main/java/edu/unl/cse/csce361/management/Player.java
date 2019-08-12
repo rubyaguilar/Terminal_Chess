@@ -1,8 +1,9 @@
-package edu.unl.cse.csce361.board;
+package edu.unl.cse.csce361.management;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.unl.cse.csce361.logic.ColorSet;
 import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
