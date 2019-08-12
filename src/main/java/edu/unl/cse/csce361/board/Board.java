@@ -1,5 +1,6 @@
 package edu.unl.cse.csce361.board;
 
+import edu.unl.cse.csce361.logic.ColorSet;
 import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.*;
 
@@ -94,7 +95,8 @@ public class Board {
 		}
 	}
 
-	public static void printBoard() {
+	public void printBoard() {
+		System.out.println("");
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				System.out.print(currentBoard[i][j] + "\t");

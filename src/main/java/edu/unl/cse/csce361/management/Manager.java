@@ -3,6 +3,7 @@ import edu.unl.cse.csce361.board.*;
 import java.util.Scanner;
 
 import edu.unl.cse.csce361.board.Board;
+import edu.unl.cse.csce361.logic.Player;
 import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
@@ -16,7 +17,7 @@ public class Manager {
 		System.out.println("Example: What piece would you like move?: a2 (equal to a pawn)\n");
 		System.out.println("2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
 		System.out.println("Example: What where would you like to move?: a3 (moving the pawn forward one)");
-		System.out.println("*************************\n");
+		System.out.println("*************************");
 	}
 	
 	public static void startGame() {
@@ -85,6 +86,14 @@ public class Manager {
 		}
 	}
 	
+	public static Point validationMove(Player p) {
+		System.out.println(p.getPlayerName()+": which piece would you like to move?");
+		Scanner a= new Scanner(System.in);
+		String pm = a.nextLine();
+		Point piecetoMove = new Point(pm);
+		return piecetoMove;
+	}
+	
 	public static Point checkDestination(Piece p, Point d) {
 		while(p.move(d.getRowNumber(),d.getColumnLetter())==false) {
 			System.out.println("Your step is invalid for the piece you want to move.Please take another valid step!\n");
@@ -95,14 +104,6 @@ public class Manager {
 		
 	}
 	
-	public static Point validationMove(Player p) {
-		System.out.println(p.getPlayerName()+": which piece would you like to move?");
-		Scanner a= new Scanner(System.in);
-		String pm = a.nextLine();
-		Point piecetoMove = new Point(pm);
-		return piecetoMove;
-	}
-	
 	public static Point validationDestination() {
 		System.out.println("where would you like to move the piece to?");
 		Scanner b= new Scanner(System.in);
@@ -111,30 +112,33 @@ public class Manager {
 		return desiredDestination;
 	}
 	
-	
-	
+	public static Player createPlayer(Player player, int count) {
+		Scanner scan = new Scanner(System.in);
+		String name;
+		if(count == 1) {
+			System.out.print("\nEnter first (white) player's name: ");
+			name = scan.next();
+		} else {
+			System.out.print("\nEnter second (black) player's name: ");
+			name = scan.next();
+		}
+		player.setPlayerName(name);
+		
+		
+		return player;
+	}
 	
 	public static void main(String[] args) {
-		welcome();
-		
 		Board board = Board.getBoard();
+		Player playerOne = Player.getInstance();
+		Player playerTwo = Player.getInstance();
+		
+		Manager.welcome();
 		board.printBoard();
-		Player one = Player.getInstance();
-		one.setPlayerName("Ruben");
-		System.out.println(one.getColor() + one.getPlayerName());
 		
-		Player two = Player.getInstance();
-		two.setPlayerName("Aguilar");
-		System.out.println(two.getColor() + two.getPlayerName());
-		
-		playerTurn(one,two,board);
-		
-		
-		
-		//Get the first player name
-		//get second player name 
-		//ask first player for their move
-		//if valid move, swap
+		Manager.createPlayer(playerOne, 1);
+		Manager.createPlayer(playerTwo, 2);
+		playerTurn(playerOne,playerTwo,board);
 		
 	}
 	

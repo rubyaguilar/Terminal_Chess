@@ -1,9 +1,8 @@
-package edu.unl.cse.csce361.board;
+package edu.unl.cse.csce361.logic;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
 /**
