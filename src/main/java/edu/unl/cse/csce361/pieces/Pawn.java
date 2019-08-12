@@ -9,12 +9,10 @@ public class Pawn extends Piece {
 	public Pawn(ColorSet color, Point Point) {
 		super(color, Point);
 		this.firstStep=true;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean move(int row, int column) {
-		// TODO Auto-generated method stub
 		Point originaPoint = this.getPoint();
 		int originalRow = originaPoint.getRowNumber();
 		int originalColumn = originaPoint.getColumnLetter();
