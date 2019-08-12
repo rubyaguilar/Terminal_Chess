@@ -3,6 +3,7 @@ import edu.unl.cse.csce361.board.*;
 import java.util.Scanner;
 
 import edu.unl.cse.csce361.board.Board;
+import edu.unl.cse.csce361.logic.Player;
 import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
