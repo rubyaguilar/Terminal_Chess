@@ -52,33 +52,34 @@ public class Point {
 	public String[] validateLocation(String rawPoint) {
 		String regex ="^[a-h][1-8]$";
 		String againPoint = null;
-		String testArr[] = rawPoint.split("");
 		boolean valid=false;
-		
+		String testArr[] = rawPoint.split("");
+		Scanner sc= new Scanner(System.in);
 		while(valid==false) {
-			Scanner sc= new Scanner(System.in);
-			if( testArr.length <= 0){ 
+			if( rawPoint.length() <= 0){ 
 				System.out.println("Your input is null. \nPlease enter a vaild input:");
 			} 
-			else if( testArr.length > 2) {
+			else if( rawPoint.length() > 2) {
 				System.out.println("Your input length is out of range. \nPlease enter a vaild input:");
 			}
-			else if (testArr.length != 2) {
+			else if( rawPoint.length() != 2) {
 				System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
 			}
-			else if( testArr.length == 2 && rawPoint.matches(regex)==false)
+			else if( rawPoint.length()  == 2 && rawPoint.matches(regex)==false)
 				System.out.println("Your input is invaild. \nPlease enter a vaild input:");
 				
 			else {
 				valid = true;
 				return testArr;
 			}
-			againPoint=sc.nextLine();
-			rawPoint=againPoint;
+			againPoint = sc.nextLine();
+			rawPoint = againPoint;
 			testArr = againPoint.split("");
 			
 		}
+		sc.close();
 		return testArr;
+		
 	}
 	
 	public Piece getPiece() {
