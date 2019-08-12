@@ -20,11 +20,6 @@ public class Manager {
 		System.out.println("*************************");
 	}
 	
-	public static void startGame() {
-		
-		
-	}
-	
 	public static Point getPieceMove() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nWhat piece would you like move?: ");
@@ -96,7 +91,7 @@ public class Manager {
 	
 	public static Point checkDestination(Piece p, Point d) {
 		while(p.move(d.getRowNumber(),d.getColumnLetter())==false) {
-			System.out.println("Your step is invalid for the piece you want to move.Please take another valid step!\n");
+			System.out.println("Your step is invalid for the piece you want to move. Please take another valid step!\n");
 			Scanner sc= new Scanner(System.in);
 			d=validationDestination();	
 		}
