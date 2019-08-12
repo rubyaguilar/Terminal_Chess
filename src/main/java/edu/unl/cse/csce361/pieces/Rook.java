@@ -8,17 +8,17 @@ public class Rook extends Piece {
 
 	public Rook(ColorSet color, Point Point) {
 		super(color, Point);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean move(int row, int column) {
-		// TODO Auto-generated method stub
 		Point originaPoint = this.getPoint();
 		int originalRow = originaPoint.getRowNumber();
 		int originalColumn = originaPoint.getColumnLetter();
+		
 		if(originalRow==row||originalColumn==column)
 			return true;
+		
 		return false;
 	}
 
