@@ -31,10 +31,4 @@ public class King extends Piece {
 		return false;
 	}
 
-	@Override
-	public void kill(Point Point) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

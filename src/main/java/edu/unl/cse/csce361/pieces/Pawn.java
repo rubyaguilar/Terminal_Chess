@@ -30,8 +30,7 @@ public class Pawn extends Piece {
 			if(x==1&&y==0)
 				return true;
 		}
-			
-		
+	
 		return false;
 	}
 
@@ -40,11 +39,4 @@ public class Pawn extends Piece {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public void kill(Point Point) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

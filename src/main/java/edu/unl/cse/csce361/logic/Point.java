@@ -15,7 +15,6 @@ import  edu.unl.cse.csce361.pieces.Piece;
 
 
 public class Point {
-	Piece piece;
 	private int columnLetter; 
 	private int rowNumber;
 	
@@ -52,12 +51,11 @@ public class Point {
 	public String[] validateLocation(String rawPoint) {
 		String regex ="^[a-h][1-8]$";
 		String againPoint = null;
-		String testArr[] = null;
-		testArr = rawPoint.split("");
+		String testArr[] = rawPoint.split("");
 		boolean valid=false;
 		
 		while(valid==false) {
-			Scanner sc = new Scanner(System.in);
+			Scanner sc= new Scanner(System.in);
 			if( testArr.length <= 0){ 
 				System.out.println("Your input is null. \nPlease enter a vaild input:");
 			} 
@@ -67,25 +65,19 @@ public class Point {
 			else if (testArr.length != 2) {
 				System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
 			}
-			else if( testArr.length == 2 && againPoint.matches(regex)==false)
+			else if( testArr.length == 2 && rawPoint.matches(regex)==false)
 				System.out.println("Your input is invaild. \nPlease enter a vaild input:");
 				
 			else {
 				valid = true;
 				return testArr;
 			}
-			againPoint = sc.nextLine();
+			againPoint=sc.nextLine();
+			rawPoint=againPoint;
 			testArr = againPoint.split("");
+			
 		}
 		return testArr;
-	}
-	
-	public Piece getPiece() {
-		return piece;
-	}
-
-	public void setPiece(Piece piece) {
-		this.piece = piece;
 	}
 	
 	public void setPoint(int row, int column) {
