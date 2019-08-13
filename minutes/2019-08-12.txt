@@ -1,0 +1,61 @@
+2019-12-08
+
+##  Emily Ewalt 
+
+*   Activity/accomplishments since last scrum
+        *   Wrote some to-dos
+*   Planned activity before next scrum
+        *   everything
+        *   catch up on major code changes
+*   Obstacles/Issues
+        *   internet at home doesn’t work
+
+##  Ruben Aguilar: 
+
+*   Activity/accomplishments since last scrum
+        *   Developing the initial logic for the beginning of the game 
+        *   Shichen implemented the initial logic 
+*   Planned activity before next scrum
+        *   Implement the strategy for the pieces to change at run time 
+        *   Check the color against the player to make sure player is only selecting a piece of their color 
+*   Obstacles/Issues
+        *   Just need more time 
+        *   ...
+
+##  Suhaib Shaikh: 
+
+*   Activity/accomplishments since last scrum
+        *  Started working on Bishop class to check and allow piece to move in correct location
+        *   ...
+*   Planned activity before next scrum
+        *   Finish implementation of valid moves for bishop to make it move to correct spot on board
+        *   Pawn can move two places when it hasn’t been moved yet. 
+*   Obstacles/Issues
+        *   
+        *   ...
+
+##  Shichen Zhao: 
+
+*   Activity/accomplishments since last scrum
+        *   implemented the validation method 
+        *   added getpiece method in board
+        *   added checkdestination method in manager class
+*   Planned activity before next scrum
+        *   Fixing the move method for each piece. Strictly horizontal, vertical, or diagonal
+        *   ...
+*   Obstacles/Issues
+        *   ...
+        *   ...
+
+##  Issues
+*   Opened since last scrum: Delete
+*   Closed since last scrum: A lot of the issues have been resolved. People just haven’t been closing them. I’ll be going through issues and deleting the ones that are already implemented. 
+
+##  Other topics
+
+*   Test cases and presentation 
+
+
+
+
+
