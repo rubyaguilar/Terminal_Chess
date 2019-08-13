@@ -14,14 +14,8 @@ public abstract class Piece {
 		this.point = location;
 		this.status = true;
 	}
-	
-	public abstract boolean move(int row, int column);
-	
-	public boolean move(Point location) {
-		int row = location.getRowNumber();
-		int column = location.getColumnLetter();
-		return move(row, column);
-	}
+		
+	public abstract boolean move(Point location);
 	
 	public ColorSet getColor() {
 		return color;

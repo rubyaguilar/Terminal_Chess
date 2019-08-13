@@ -11,7 +11,10 @@ public class Queen extends Piece {
 	}
 
 	@Override
-	public boolean move(int row, int column) {
+	public boolean move(Point p) {
+		int row = p.getRowNumber();
+		int column = p.getColumnLetter();
+		
 		Point originaPoint = this.getPoint();
 		int originalRow = originaPoint.getRowNumber();
 		int originalColumn = originaPoint.getColumnLetter();
