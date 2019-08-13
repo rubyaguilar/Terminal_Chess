@@ -1,9 +1,12 @@
-package edu.unl.cse.csce361.board;
+package edu.unl.cse.csce361.logic;
 
-import edu.unl.cse.csce361.logic.Point;
+import java.util.HashMap;
+import java.util.Map;
+
+import edu.unl.cse.csce361.pieces.Piece;
 
 /**
- * 	Bare bones to a player class
+ * Bare bones to a player class
  */
 
 public class Player {
@@ -13,19 +16,20 @@ public class Player {
 	private String playerName;
 	private Point pieceToMove;
 	private Point desiredDestination;
+
 	static {
 		instances[0] = new Player(ColorSet.WHITE);
 		instances[1] = new Player(ColorSet.BLACK);
 	}
-	
+
 	private Player(ColorSet color) {
 		this.color = color;
 	}
-	
+
 	public static Player getInstance() {
-		return instances[(index++)%2];
+		return instances[(index++) % 2];
 	}
-	
+
 	public ColorSet getColor() {
 		return color;
 	}
@@ -33,7 +37,7 @@ public class Player {
 	public void setColor(ColorSet color) {
 		this.color = color;
 	}
-	
+
 	public String getPlayerName() {
 		return playerName;
 	}
@@ -46,20 +50,16 @@ public class Player {
 		return this.pieceToMove;
 	}
 
-
 	public void setPieceToMove(Point pieceToMove) {
 		this.pieceToMove = pieceToMove;
 	}
-
 
 	public Point getDesiredDestination() {
 		return this.desiredDestination;
 	}
 
-
 	public void setDesiredDestination(Point desiredDestination) {
 		this.desiredDestination = desiredDestination;
 	}
-	
-	
+
 }
