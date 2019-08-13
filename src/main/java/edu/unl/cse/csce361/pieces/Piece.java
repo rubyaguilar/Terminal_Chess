@@ -37,6 +37,7 @@ public abstract class Piece {
 	 * @return true if you can continue with valid move checking false if already
 	 *         definitely invalid move
 	 */
+	
 	// TODO: Rook/King may have to override this, with their unique move swap
 	protected boolean checkIfSpotOpen(Point point) {
 		Piece spot = getPiece(point);
