@@ -45,37 +45,23 @@ public class Manager {
 		return desiredMove;
 	}
 
-	/**
-	 * I will use this to implement the strategy design for the pieces class.
-	 * 
-	 */
-
-	public void pieceRun() {
-		while (true) {
-			//FIXME: How to inherit piece from user selection? 
-			
-		}
-	}
-
 	public static void playerTurn(Player p1, Player p2, Board board) {
 		int step = 1;
 		Point piecetoMove;
 		Point desiredDestination;
 		Point checkedDestination;
-		Piece piece;
+		//Piece piece = null;
 		while (true) {
 			if (step % 2 == 1) {
-				piecetoMove = validationMove(p1);
+				piecetoMove = validationPiece(p1);
 				desiredDestination = validationDestination();
-				piece = board.getPiece(piecetoMove);
-				checkedDestination = checkDestination(piece, desiredDestination);
+				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
 				board.swap(piecetoMove, checkedDestination);
 				board.printBoard();
 			} else {
-				piecetoMove = validationMove(p2);
+				piecetoMove = validationPiece(p2);
 				desiredDestination = validationDestination();
-				piece = board.getPiece(piecetoMove);
-				checkedDestination = checkDestination(piece, desiredDestination);
+				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
 				board.swap(piecetoMove, checkedDestination);
 				board.printBoard();
 			}
@@ -83,22 +69,22 @@ public class Manager {
 		}
 	}
 
-	public static Point validationMove(Player p) {
+	public static Point validationPiece(Player p) {
 		System.out.println(p.getPlayerName() + ": which piece would you like to move?");
 		Scanner a = new Scanner(System.in);
 		String pm = a.nextLine();
-		Point piecetoMove = new Point(pm);
-		//FIXME: Could allow for the Piece type to be inherited at this step
+		Point piecetoMove = new Point(pm); //If passed, it is a valid piece. 
+		//FIXME: Maybe getPiece logic for board also works as meth
 		
 		return piecetoMove;
 	}
 
 	public static Point checkDestination(Piece p, Point d) {
 		while (p.move(d.getRowNumber(), d.getColumnLetter()) == false) {
-			System.out
-					.println("Your step is invalid for the piece you want to move. Please take another valid step!\n");
+			System.out.println("Your step is invalid for the piece you want to move. Please take another valid step!\n");
 			Scanner sc = new Scanner(System.in);
 			d = validationDestination();
+			
 		}
 		return d;
 
