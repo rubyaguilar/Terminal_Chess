@@ -9,6 +9,10 @@ public class Pawn extends Piece {
 	public Pawn(ColorSet color, Point Point) {
 		super(color, Point);
 		this.firstStep = true;
+		if (Point.getRowNumber() == 6 || Point.getRowNumber() == 2) {
+			this.firstStep = true;
+		}
+
 	}
 
 	@Override
@@ -19,13 +23,12 @@ public class Pawn extends Piece {
 		int x = Math.abs(row - originalRow);
 		int y = Math.abs(column - originalColumn);
 
-		if (this.firstStep == true) {
-			if (x == 1 && y == 0 || x == 2 && y == 0)
-				return true;
-			this.firstStep = false;
+		if (this.firstStep == true && x == 2 && y == 0) {
+			return true;
 		} else {
-			if (x == 1 && y == 0)
+			if (x == 1 && y == 0) {
 				return true;
+			}
 		}
 
 		return false;
