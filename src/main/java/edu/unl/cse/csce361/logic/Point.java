@@ -62,7 +62,7 @@ public class Point {
 			else if( rawPoint.length() != 2) {
 				System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
 			}
-			else if( rawPoint.length()  == 2 && rawPoint.matches(regex)==false)
+			else if( rawPoint.length()  == 2 && rawPoint.matches(regex)==false) {
 				System.out.println("Your input is invaild. \nPlease enter a vaild input:");
 			} else {
 				valid = true;

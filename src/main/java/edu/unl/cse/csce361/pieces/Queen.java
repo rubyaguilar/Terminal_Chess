@@ -24,10 +24,4 @@ public class Queen extends Piece {
 		return false;
 	}
 
-	@Override
-	public boolean move(Point Point) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

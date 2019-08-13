@@ -26,10 +26,4 @@ public class King extends Piece {
 		return false;
 	}
 
-	@Override
-	public boolean move(Point Point) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }
