@@ -142,30 +142,42 @@ public class Board {
 		String str = getSpot(p);
 		switch (str) {
 		case "\u2654":
-			piece = new King(ColorSet.WHITE, p);
+			piece = new King(ColorSet.WHITE,p);
+			break;
 		case "\u2655":
-			piece = new Queen(ColorSet.WHITE, p);
+			piece = new Queen(ColorSet.WHITE,p);
+			break;
 		case "\u2656":
-			piece = new Rook(ColorSet.WHITE, p);
+			piece = new Rook(ColorSet.WHITE,p);
+			break;
 		case "\u2657":
-			piece = new Bishop(ColorSet.WHITE, p);
+			piece = new Bishop(ColorSet.WHITE,p);
+			break;
 		case "\u2658":
-			piece = new Knight(ColorSet.WHITE, p);
+			piece = new Knight(ColorSet.WHITE,p);
+			break;
 		case "\u2659":
-			piece = new Pawn(ColorSet.WHITE, p);
+			piece = new Pawn(ColorSet.WHITE,p);
+			break;
 		case "\u265A":
-			piece = new King(ColorSet.BLACK, p);
+			piece = new King(ColorSet.BLACK,p);
+			break;
 		case "\u265B":
-			piece = new Queen(ColorSet.BLACK, p);
+			piece = new Queen(ColorSet.BLACK,p);
+			break;
 		case "\u265C":
-			piece = new Rook(ColorSet.BLACK, p);
+			piece = new Rook(ColorSet.BLACK,p);
+			break;
 		case "\u265D":
-			piece = new Bishop(ColorSet.BLACK, p);
+			piece = new Bishop(ColorSet.BLACK,p);
+			break;
 		case "\u265E":
-			piece = new Knight(ColorSet.BLACK, p);
+			piece = new Knight(ColorSet.BLACK,p);
+			break;
 		case "\u265F":
-			piece = new Pawn(ColorSet.BLACK, p);
-
+			piece = new Pawn(ColorSet.BLACK,p);
+			break;
+		
 		}
 		return piece;
 	}
