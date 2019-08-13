@@ -16,7 +16,12 @@ public abstract class Piece {
 	}
 	
 	public abstract boolean move(int row, int column);
-	public abstract boolean move(Point location);
+	
+	public boolean move(Point location) {
+		int row = location.getRowNumber();
+		int column = location.getColumnLetter();
+		return move(row, column);
+	}
 	
 	public ColorSet getColor() {
 		return color;
