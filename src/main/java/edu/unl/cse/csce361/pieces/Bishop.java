@@ -23,13 +23,4 @@ public class Bishop extends Piece {
 		return false;
 	}
 
-	@Override
-	public boolean move(Point location) {
-		// TODO Auto-generated method stub
-		
-		return true;
-	}
-
-	
-
 }
