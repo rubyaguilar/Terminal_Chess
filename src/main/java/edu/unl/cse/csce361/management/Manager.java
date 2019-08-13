@@ -9,6 +9,9 @@ import edu.unl.cse.csce361.logic.Point;
 import edu.unl.cse.csce361.pieces.Piece;
 
 public class Manager {
+	
+	private Piece piece;
+	
 	public static void welcome() {
 		System.out.println("*************************");
 		System.out.println("Welcome to CSCE361 Chess!");
@@ -49,7 +52,8 @@ public class Manager {
 
 	public void pieceRun() {
 		while (true) {
-
+			//FIXME: How to inherit piece from user selection? 
+			
 		}
 	}
 
@@ -84,6 +88,8 @@ public class Manager {
 		Scanner a = new Scanner(System.in);
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm);
+		//FIXME: Could allow for the Piece type to be inherited at this step
+		
 		return piecetoMove;
 	}
 

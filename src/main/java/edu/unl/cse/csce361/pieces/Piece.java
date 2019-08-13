@@ -51,6 +51,8 @@ public abstract class Piece {
 		return true;
 	}
 	
+	
+	
 	public boolean isStatus() {
 		return status;
 	}
