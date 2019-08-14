@@ -4,6 +4,7 @@ import java.util.Scanner;
 import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.logic.Player;
 import edu.unl.cse.csce361.logic.Point;
+import edu.unl.cse.csce361.pieces.King;
 import edu.unl.cse.csce361.pieces.Piece;
 
 public class Manager {
@@ -48,18 +49,21 @@ public class Manager {
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm);
 		Piece piece = Piece.getPiece(piecetoMove);
+		
 		while (piece == null ) {
 			System.out.print("Please select a piece: ");
 			pm = a.nextLine();
 			piecetoMove = new Point(pm);
 			piece = Piece.getPiece(piecetoMove);
 		}
+		
 		while (piece.getColor() != p.getColor() ) {
 			System.out.print("Not your piece. Please select a valid piece: ");
 			pm = a.nextLine();
 			piecetoMove = new Point(pm);
 			piece = Piece.getPiece(piecetoMove);
 		}
+		
 		return piecetoMove;
 	}
 	
@@ -89,17 +93,30 @@ public class Manager {
 		while (true) {
 			if (step % 2 == 1) {
 				piecetoMove = validationPiece(p1);
-				desiredDestination = validationDestination();
-				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
-				board.swap(piecetoMove, checkedDestination);
-				board.printBoard();
 			} else {
 				piecetoMove = validationPiece(p2);
-				desiredDestination = validationDestination();
-				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
-				board.swap(piecetoMove, checkedDestination);
-				board.printBoard();
 			}
+			
+			desiredDestination = validationDestination();
+			checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
+			
+			Piece deadPiece = Piece.getPiece(checkedDestination);
+			
+			
+			board.swap(piecetoMove, checkedDestination);
+			board.printBoard();
+			
+			if(deadPiece != null && deadPiece instanceof King) {
+				System.out.println("CHECKMATE");
+				if (step % 2 == 1) {
+					System.out.println(p1.getPlayerName() + " WINS!");
+				} else {
+					System.out.println(p2.getPlayerName() + " WINS!");
+				}
+				
+				break;
+			}
+			
 			step++;
 		}
 	}
