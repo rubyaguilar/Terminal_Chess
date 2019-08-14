@@ -50,7 +50,12 @@ public class Manager {
 		Point piecetoMove;
 		Point desiredDestination;
 		Point checkedDestination;
+<<<<<<< HEAD
 		//Piece piece = null;
+=======
+		Piece piece;
+		
+>>>>>>> 4cb0af818baf8f07fde9805d5d721f5bdef43380
 		while (true) {
 			if (step % 2 == 1) {
 				piecetoMove = validationPiece(p1);
@@ -65,6 +70,7 @@ public class Manager {
 				board.swap(piecetoMove, checkedDestination);
 				board.printBoard();
 			}
+			
 			step++;
 		}
 	}
@@ -80,14 +86,13 @@ public class Manager {
 	}
 
 	public static Point checkDestination(Piece p, Point d) {
-		while (p.move(d.getRowNumber(), d.getColumnLetter()) == false) {
+		while (p.move(d) == false) {
 			System.out.println("Your step is invalid for the piece you want to move. Please take another valid step!\n");
 			Scanner sc = new Scanner(System.in);
 			d = validationDestination();
 			
 		}
 		return d;
-
 	}
 
 	public static Point validationDestination() {
