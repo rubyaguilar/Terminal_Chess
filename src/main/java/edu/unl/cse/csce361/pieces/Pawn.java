@@ -26,13 +26,12 @@ public class Pawn extends Piece {
 		int x = Math.abs(row-originalRow);
 		int y = Math.abs(column-originalColumn);
 		
+		
 		if(this.firstStep == true && x == 2 && y == 0) {
 			return checkPathVertical(row, column);
 		}else if (x == 1 && y == 0) {
 				return checkPathVertical(row, column);
 
-		}else {
-			
 		}
 		return false;
 	}
