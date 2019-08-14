@@ -51,6 +51,7 @@ public class Point {
 	 * @param point
 	 * @return an array
 	 */
+	
 	public String[] validateLocation(String rawPoint) {
 		String regex = "^[a-h][1-8]$";
 		String againPoint = null;
@@ -85,9 +86,6 @@ public class Point {
 		sc.close();
 		return testArr;
 	}	
-
-	
-
 
 	public void setPoint(int row, int column) {
 		this.rowNumber = row;
