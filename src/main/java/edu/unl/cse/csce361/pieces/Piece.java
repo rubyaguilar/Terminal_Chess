@@ -60,7 +60,7 @@ public abstract class Piece {
 		// is vertical direction up or down?
 		int verticalStep = endRow < currRow ? -1 : 1;
 
-		while (currRow != endRow && currColumn != endColumn) {
+		while (currRow != endRow || currColumn != endColumn) {
 			currRow += verticalStep;
 			currColumn += horizontalStep;
 			
@@ -68,7 +68,7 @@ public abstract class Piece {
 			Piece spot = Board.getBoard().getPiece(currPoint);
 			
 			if(spot != null) {
-				return true;
+				return false;
 			}
 		}
 
@@ -83,14 +83,14 @@ public abstract class Piece {
 		// is vertical direction up or down?
 		int verticalStep = endRow < currRow ? -1 : 1;
 
-		while (currRow != endRow && currColumn != endColumn) {
+		while (currRow != endRow || currColumn != endColumn) {
 			currRow += verticalStep;
 			
 			Point currPoint = new Point(currRow, currColumn);
 			Piece spot = Board.getBoard().getPiece(currPoint);
 			
 			if(spot != null) {
-				return true;
+				return false;
 			}
 		}
 
@@ -105,14 +105,14 @@ public abstract class Piece {
 		// is horizontal direction left or right?
 		int horizontalStep = endColumn < currColumn ? -1 : 1;
 
-		while (currRow != endRow && currColumn != endColumn) {
+		while (currRow != endRow || currColumn != endColumn) {
 			currColumn += horizontalStep;
 			
 			Point currPoint = new Point(currRow, currColumn);
 			Piece spot = Board.getBoard().getPiece(currPoint);
 			
 			if(spot != null) {
-				return true;
+				return false;
 			}
 		}
 

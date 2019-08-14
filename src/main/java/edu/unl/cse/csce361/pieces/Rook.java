@@ -28,6 +28,12 @@ public class Rook extends Piece {
 
 		if (originalRow != row && originalColumn != column)
 			return false;
+		
+		if(originalRow == row) {
+			return checkPathHorizontal(row, column);
+		} else if(originalColumn == column) {
+			return checkPathVertical(row, column);
+		}
 
 		return false;
 	}
