@@ -1,5 +1,7 @@
 package edu.unl.cse.csce361.management;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.logic.Player;
@@ -90,12 +92,16 @@ public class Manager {
 		Point piecetoMove;
 		Point desiredDestination;
 		Point checkedDestination;		
+		
 		while (true) {
+			Player currPlayer = null;
 			if (step % 2 == 1) {
-				piecetoMove = validationPiece(p1);
+				currPlayer = p1;
 			} else {
-				piecetoMove = validationPiece(p2);
+				currPlayer = p2;
 			}
+			
+			piecetoMove = validationPiece(currPlayer);
 			
 			desiredDestination = validationDestination();
 			checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
@@ -108,17 +114,49 @@ public class Manager {
 			
 			if(deadPiece != null && deadPiece instanceof King) {
 				System.out.println("CHECKMATE");
-				if (step % 2 == 1) {
-					System.out.println(p1.getPlayerName() + " WINS!");
-				} else {
-					System.out.println(p2.getPlayerName() + " WINS!");
-				}
-				
+				System.out.println(currPlayer.getPlayerName() + " WINS!");
 				break;
+			}
+			
+			if(check(currPlayer)) {
+				System.out.println("CHECK");
 			}
 			
 			step++;
 		}
+	}
+	
+	private static boolean check(Player player) {
+		List<Piece> opposingPieces = new ArrayList<Piece>();
+		Piece playerKing = null;
+		
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
+				Point currPoint = new Point(i, j);
+				Piece currPiece = Piece.getPiece(currPoint);
+				
+				if(currPiece != null) {
+					if(currPiece.getColor() == player.getColor() && currPiece instanceof King) {
+						playerKing = currPiece;
+					} else if(currPiece.getColor() != player.getColor()) {
+						opposingPieces.add(currPiece);
+					}
+				}
+			}
+		}
+		
+		if(playerKing == null) {
+			System.err.println("King not found. Game should already be over.");
+			System.exit(-1);
+		}
+		
+		for(Piece p : opposingPieces) {
+			if(p.move(playerKing.getPoint())) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	public static void main(String[] args) {
