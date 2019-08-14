@@ -14,8 +14,7 @@ public abstract class Piece {
 		this.point = location;
 		this.status = true;
 	}
-	
-	public abstract boolean move(int row, int column);
+		
 	public abstract boolean move(Point location);
 	
 	public ColorSet getColor() {
@@ -25,6 +24,7 @@ public abstract class Piece {
 	public Point getPoint() {
 		return point;
 	}
+	
 	
 	/**
 	 * Method to check if a spot is open 
@@ -36,10 +36,10 @@ public abstract class Piece {
 	 * @return true if you can continue with valid move checking false if already
 	 *         definitely invalid move
 	 */
+	
 	// TODO: Rook/King may have to override this, with their unique move swap
 	protected boolean checkIfSpotOpen(Point point) {
-		Piece spot = Board.getBoard().getPiece(point);
-		
+		Piece spot = getPiece(point);
 		if(spot == null) {
 			return true;
 		}
@@ -50,6 +50,121 @@ public abstract class Piece {
 		
 		return true;
 	}
+	
+	protected boolean checkPathDiagonal(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is horizontal direction left or right?
+		int horizontalStep = endColumn < currColumn ? -1 : 1;
+		// is vertical direction up or down?
+		int verticalStep = endRow < currRow ? -1 : 1;
+
+		while (currRow != endRow || currColumn != endColumn) {
+			currRow += verticalStep;
+			currColumn += horizontalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Piece.getPiece(currPoint);
+			
+			if(spot != null) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	protected boolean checkPathVertical(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is vertical direction up or down?
+		int verticalStep = endRow < currRow ? -1 : 1;
+
+		while (currRow != endRow || currColumn != endColumn) {
+			currRow += verticalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Piece.getPiece(currPoint);
+			
+			if(spot != null) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	protected boolean checkPathHorizontal(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is horizontal direction left or right?
+		int horizontalStep = endColumn < currColumn ? -1 : 1;
+
+		while (currRow != endRow || currColumn != endColumn) {
+			currColumn += horizontalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Piece.getPiece(currPoint);
+			
+			if(spot != null) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+	
+	public static Piece getPiece(Point p) {
+		Piece piece = null;
+		String str = Board.getSpot(p);
+		switch (str) {
+		case "\u2654":
+			piece = new King(ColorSet.WHITE,p);
+			break;
+		case "\u2655":
+			piece = new Queen(ColorSet.WHITE,p);
+			break;
+		case "\u2656":
+			piece = new Rook(ColorSet.WHITE,p);
+			break;
+		case "\u2657":
+			piece = new Bishop(ColorSet.WHITE,p);
+			break;
+		case "\u2658":
+			piece = new Knight(ColorSet.WHITE,p);
+			break;
+		case "\u2659":
+			piece = new Pawn(ColorSet.WHITE,p);
+			break;
+		case "\u265A":
+			piece = new King(ColorSet.BLACK,p);
+			break;
+		case "\u265B":
+			piece = new Queen(ColorSet.BLACK,p);
+			break;
+		case "\u265C":
+			piece = new Rook(ColorSet.BLACK,p);
+			break;
+		case "\u265D":
+			piece = new Bishop(ColorSet.BLACK,p);
+			break;
+		case "\u265E":
+			piece = new Knight(ColorSet.BLACK,p);
+			break;
+		case "\u265F":
+			piece = new Pawn(ColorSet.BLACK,p);
+			break;
+		
+		}
+		return piece;
+	}
+
 	
 	public boolean isStatus() {
 		return status;
