@@ -4,6 +4,7 @@ import java.util.Scanner;
 import edu.unl.cse.csce361.board.Board;
 import edu.unl.cse.csce361.logic.Player;
 import edu.unl.cse.csce361.logic.Point;
+import edu.unl.cse.csce361.pieces.King;
 import edu.unl.cse.csce361.pieces.Piece;
 
 public class Manager {
@@ -81,17 +82,21 @@ public class Manager {
 		while (true) {
 			if (step % 2 == 1) {
 				piecetoMove = validationPiece(p1);
-				desiredDestination = validationDestination();
-				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
-				board.swap(piecetoMove, checkedDestination);
-				board.printBoard();
 			} else {
 				piecetoMove = validationPiece(p2);
-				desiredDestination = validationDestination();
-				checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
-				board.swap(piecetoMove, checkedDestination);
-				board.printBoard();
 			}
+			
+			desiredDestination = validationDestination();
+			checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
+			
+			Piece deadPiece = Piece.getPiece(checkedDestination);
+			if(checkedDestination instanceof King) {
+				
+			}
+			
+			board.swap(piecetoMove, checkedDestination);
+			board.printBoard();
+			
 			step++;
 		}
 	}
