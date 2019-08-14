@@ -1,0 +1,25 @@
+What was accomplished?
+We were able to get a functioning board that would swap desired pieces and ensure that the piece belongs to the player and that the piece is being moved to a valid location on the board. 
+A lot of the piece logic was complete
+Got a functioning UI so we could test the code
+Also implemented a functioning UI so we could see our design working. 
+
+What wasn't accomplished?
+What wasn’t accomplished is uncommon cases like castling (swap king and rook after a certain combination has been reached) and Enpassant. These cases are just so unique, we need more time to create exceptions to our general rules. 
+
+Were there unexpected obstacles and/or opportunities?
+Unexpected obstacles were the uncommon cases of specific moves. We tried having a design that would handle general/common cases, and it made it tricky to handle these uncommon cases. 
+
+What should you keep doing?
+Communicating design decisions to each other
+Following good git practices 
+Communicating
+
+What should you start doing?
+Communicate a little better in regards to who is doing what
+Try and establish a clearer path of our design patterns  
+
+What should you stop doing?
+Making classes without clearly discussing design first 
+Spending too much time on side discussions when we our supposed to be discussion decision. (AKA I digress)
+
