@@ -23,9 +23,9 @@ public class Queen extends Piece {
 		int column = p.getColumnLetter();
 
 		// check if valid direction
-		Point originaPoint = this.getPoint();
-		int originalRow = originaPoint.getRowNumber();
-		int originalColumn = originaPoint.getColumnLetter();
+		Point originalPoint = this.getPoint();
+		int originalRow = originalPoint.getRowNumber();
+		int originalColumn = originalPoint.getColumnLetter();
 
 		boolean valid = false;
 
