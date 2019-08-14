@@ -37,7 +37,7 @@ public class Point {
 		setColumnLetter(inputArr[0]); // setting the indexed column letter
 		setRowNumber(inputArr[1]); // setting the indexed row number
 	}
-	
+
 	public Point(int row, int column) {
 		setColumnLetter(column);
 		setRowNumber(row);
@@ -51,41 +51,39 @@ public class Point {
 	 * @param point
 	 * @return an array
 	 */
-	
+
 	public String[] validateLocation(String rawPoint) {
 		String regex = "^[a-h][1-8]$";
 		String againPoint = null;
-		boolean valid=false;
+		boolean valid = false;
 		String testArr[] = rawPoint.split("");
-		Scanner sc= new Scanner(System.in);
-			while(valid==false) {
-				if( rawPoint.length() <= 0){ 
-					System.out.println("Your input is null. \nPlease enter a vaild input:");
-				} 
-				else if( rawPoint.length() > 2) {
-					System.out.println("Your input length is out of range. \nPlease enter a vaild input:");
-				}
-				else if( rawPoint.length() != 2) {
-					System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
-				}
-				else if( rawPoint.length()  == 2 && rawPoint.matches(regex)==false) {
-					System.out.println("Your input is invaild. \nPlease enter a vaild input:");
-				} else {
-					valid = true;
-					return testArr;
-				}
-				againPoint = sc.nextLine();
-				rawPoint = againPoint;
-				testArr = againPoint.split("");
-				
-				againPoint = sc.nextLine();
-				rawPoint = againPoint;
-				testArr = againPoint.split("");
-	
+		Scanner sc = new Scanner(System.in);
+		while (valid == false) {
+			if (rawPoint.length() <= 0) {
+				System.out.println("Your input is null. \nPlease enter a vaild input:");
+			} else if (rawPoint.length() > 2) {
+				System.out.println("Your input length is out of range. \nPlease enter a vaild input:");
+			} else if (rawPoint.length() != 2) {
+				System.out.println("Your input length doesn't match the 2D rules. \nPlease enter a vaild input:");
+			} else if (rawPoint.length() == 2 && rawPoint.matches(regex) == false) {
+				System.out.println("Your input is invaild. \nPlease enter a vaild input:");
+			} else {
+				valid = true;
+				return testArr;
 			}
+			
+			againPoint = sc.nextLine();
+			rawPoint = againPoint;
+			testArr = againPoint.split("");
+
+			againPoint = sc.nextLine();
+			rawPoint = againPoint;
+			testArr = againPoint.split("");
+
+		}
 		sc.close();
 		return testArr;
-	}	
+	}
 
 	public void setPoint(int row, int column) {
 		this.rowNumber = row;
