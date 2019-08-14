@@ -49,18 +49,21 @@ public class Manager {
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm);
 		Piece piece = Piece.getPiece(piecetoMove);
+		
 		while (piece == null ) {
 			System.out.print("Please select a piece: ");
 			pm = a.nextLine();
 			piecetoMove = new Point(pm);
 			piece = Piece.getPiece(piecetoMove);
 		}
+		
 		while (piece.getColor() != p.getColor() ) {
 			System.out.print("Not your piece. Please select a valid piece: ");
 			pm = a.nextLine();
 			piecetoMove = new Point(pm);
 			piece = Piece.getPiece(piecetoMove);
 		}
+		
 		return piecetoMove;
 	}
 	
@@ -98,12 +101,21 @@ public class Manager {
 			checkedDestination = checkDestination(Piece.getPiece(piecetoMove), desiredDestination);
 			
 			Piece deadPiece = Piece.getPiece(checkedDestination);
-			if(checkedDestination instanceof King) {
-				
-			}
+			
 			
 			board.swap(piecetoMove, checkedDestination);
 			board.printBoard();
+			
+			if(deadPiece != null && deadPiece instanceof King) {
+				System.out.println("CHECKMATE");
+				if (step % 2 == 1) {
+					System.out.println(p1.getPlayerName() + " WINS!");
+				} else {
+					System.out.println(p2.getPlayerName() + " WINS!");
+				}
+				
+				break;
+			}
 			
 			step++;
 		}
