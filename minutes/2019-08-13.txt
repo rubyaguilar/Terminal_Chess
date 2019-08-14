@@ -1,0 +1,60 @@
+2019-08-13
+
+##  Emily Ewalt 
+
+*   Activity/accomplishments since last scrum
+        *   finished checkIfSpotIsOpen method
+        *   finally got it to run properly
+*   Planned activity before next scrum
+        *   start working on piece logic. I’ll do king and bishop logic
+*   Obstacles/Issues
+        *   encoding issues
+
+##  Ruben Aguilar: 
+
+*   Activity/accomplishments since last scrum
+        *   Pinpointed where to validate the piece matches player’s color and inheriting the piece
+        *   Began implementing logic above and refactoring design 
+*   Planned activity before next scrum
+        *   Finish implementing entire validatePiece() 
+        *   ...
+*   Obstacles/Issues
+        *   Nothing really. 
+        *   ...
+
+##  Suhaib Shaikh: 
+
+*   Activity/accomplishments since last scrum
+        *   Fixed issue of pawn being able to move 2 places only first time it’s moved
+        *   ...
+*   Planned activity before next scrum
+        *   Implement functionality of checking spaces in front of pawn so it can’t jump over other pieces 
+        *  Will start creating the presentation slides
+*   Obstacles/Issues
+        *   ...
+        *   ...
+
+##  Shichen Zhao: 
+
+*   Activity/accomplishments since last scrum
+        *   Fixed the problem that the logic move for the piece.
+        *   ...
+*   Planned activity before next scrum
+        * implemented some logics for the piece. Do the kill for the pawn and the pawn can change to any piece when reach to the opposite place. 
+        *   ...
+*   Obstacles/Issues
+        *   ...
+        *   ...
+
+##  Issues
+*   Opened since last scrum: None
+*   Closed since last scrum: Delete Point from Piece (#17), validLocation (#16)
+
+##  Other topics
+
+*   ...
+
+
+
+
+
