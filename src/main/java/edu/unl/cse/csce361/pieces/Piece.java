@@ -50,6 +50,75 @@ public abstract class Piece {
 		return true;
 	}
 	
+	protected boolean checkPathDiagonal(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is horizontal direction left or right?
+		int horizontalStep = endColumn < currColumn ? -1 : 1;
+		// is vertical direction up or down?
+		int verticalStep = endRow < currRow ? -1 : 1;
+
+		while (currRow != endRow && currColumn != endColumn) {
+			currRow += verticalStep;
+			currColumn += horizontalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Board.getBoard().getPiece(currPoint);
+			
+			if(spot != null) {
+				return true;
+			}
+		}
+
+		return true;
+	}
+
+	protected boolean checkPathVertical(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is vertical direction up or down?
+		int verticalStep = endRow < currRow ? -1 : 1;
+
+		while (currRow != endRow && currColumn != endColumn) {
+			currRow += verticalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Board.getBoard().getPiece(currPoint);
+			
+			if(spot != null) {
+				return true;
+			}
+		}
+
+		return true;
+	}
+
+	protected boolean checkPathHorizontal(int endRow, int endColumn) {
+		Point p = getPoint();
+		int currRow = p.getRowNumber();
+		int currColumn = p.getColumnLetter();
+
+		// is horizontal direction left or right?
+		int horizontalStep = endColumn < currColumn ? -1 : 1;
+
+		while (currRow != endRow && currColumn != endColumn) {
+			currColumn += horizontalStep;
+			
+			Point currPoint = new Point(currRow, currColumn);
+			Piece spot = Board.getBoard().getPiece(currPoint);
+			
+			if(spot != null) {
+				return true;
+			}
+		}
+
+		return true;
+	}
+	
 	public boolean isStatus() {
 		return status;
 	}
