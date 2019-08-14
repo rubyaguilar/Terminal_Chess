@@ -37,6 +37,11 @@ public class Point {
 		setColumnLetter(inputArr[0]); // setting the indexed column letter
 		setRowNumber(inputArr[1]); // setting the indexed row number
 	}
+	
+	public Point(int row, int column) {
+		setColumnLetter(column);
+		setRowNumber(row);
+	}
 
 	/**
 	 * 

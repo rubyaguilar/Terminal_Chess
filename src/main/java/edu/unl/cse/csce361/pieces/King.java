@@ -12,7 +12,13 @@ public class King extends Piece {
 
 	@Override
 	public boolean move(Point p) {
-//		if(checkIfSpotOpen(p))
+		// check if the spot is open
+		// if it isn't, is it an opposing players piece?
+		// if returns false, cannot move
+		if(!checkIfSpotOpen(p)) {
+			return false;
+		}
+		
 		int row = p.getRowNumber();
 		int column = p.getColumnLetter();
 		
@@ -28,8 +34,6 @@ public class King extends Piece {
 				return true;
 		}
 		
-		
-
 		return false;
 	}
 

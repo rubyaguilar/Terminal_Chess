@@ -96,7 +96,6 @@ public class Manager {
 			d = validationDestination();
 		}
 		return d;
-
 	}
 
 	public static Point validationDestination() {
