@@ -94,13 +94,14 @@ public class Board {
 	}
 
 	public void printBoard() {
-		System.out.println("");
+		System.out.println("\n**********************************************************");
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				System.out.print(currentBoard[i][j] + "\t");
 			}
 			System.out.print("\n");
 		}
+		System.out.println("**********************************************************");
 	}
 
 	/**

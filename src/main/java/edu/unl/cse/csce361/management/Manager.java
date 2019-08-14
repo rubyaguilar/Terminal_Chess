@@ -16,20 +16,16 @@ public class Manager {
 		System.out.println("*************************");
 		System.out.println("Welcome to CSCE361 Chess!");
 		System.out.println("*************************");
-		System.out.println(
-				"To begin, decide who the first player is. \nFirst player, select the piece you'd like to move.\n");
-		System.out.println(
-				"Instructions: \n1. Select a piece by entering its associated vertical letter followed by its associated horizontal number");
+		System.out.println("To begin, decide who the first player is. \nFirst player, select the piece you'd like to move.\n");
+		System.out.println("Instructions: \n1. Select a piece by entering its associated vertical letter followed by its associated horizontal number");
 		System.out.println("Example: What piece would you like move?: a2 (equal to a pawn)\n");
-		System.out.println(
-				"2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
+		System.out.println("2. Select your desired location by entering its associated vertical letter followed by its associated horizontal number");
 		System.out.println("Example: What where would you like to move?: a3 (moving the pawn forward one)");
-		System.out.println("*************************");
 	}
 
 	public static Point getPieceMove() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\nWhat piece would you like move?: ");
+		System.out.print("\nWhat piece would you like move? ");
 		String stringPiece = scan.nextLine();
 		Point pieceMove = new Point(stringPiece); // piece they want to move
 
@@ -38,7 +34,7 @@ public class Manager {
 
 	public static Point getdesiredDestination() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\nWhere would you like to move?: ");
+		System.out.print("\nWhere would you like to move? ");
 		String stringMove = scan.nextLine();
 		Point desiredMove = new Point(stringMove); // piece they want to move
 		scan.close();
@@ -49,13 +45,7 @@ public class Manager {
 		int step = 1;
 		Point piecetoMove;
 		Point desiredDestination;
-		Point checkedDestination;
-<<<<<<< HEAD
-		//Piece piece = null;
-=======
-		Piece piece;
-		
->>>>>>> 4cb0af818baf8f07fde9805d5d721f5bdef43380
+		Point checkedDestination;		
 		while (true) {
 			if (step % 2 == 1) {
 				piecetoMove = validationPiece(p1);
@@ -76,7 +66,7 @@ public class Manager {
 	}
 
 	public static Point validationPiece(Player p) {
-		System.out.println(p.getPlayerName() + ": which piece would you like to move?");
+		System.out.print("\n" + p.getPlayerName() + ", which piece would you like to move? ");
 		Scanner a = new Scanner(System.in);
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm); //If passed, it is a valid piece. 
@@ -87,7 +77,7 @@ public class Manager {
 
 	public static Point checkDestination(Piece p, Point d) {
 		while (p.move(d) == false) {
-			System.out.println("Your step is invalid for the piece you want to move. Please take another valid step!\n");
+			System.out.print("\nYour move is invalid. Please take a valid step!\n");
 			Scanner sc = new Scanner(System.in);
 			d = validationDestination();
 			
@@ -96,7 +86,7 @@ public class Manager {
 	}
 
 	public static Point validationDestination() {
-		System.out.println("where would you like to move the piece to?");
+		System.out.print("Where would you like to move the piece to? ");
 		Scanner b = new Scanner(System.in);
 		String dd = b.nextLine();
 		Point desiredDestination = new Point(dd);
@@ -110,7 +100,7 @@ public class Manager {
 			System.out.print("\nEnter first (white) player's name: ");
 			name = scan.next();
 		} else {
-			System.out.print("\nEnter second (black) player's name: ");
+			System.out.print("Enter second (black) player's name: ");
 			name = scan.next();
 		}
 		player.setPlayerName(name);

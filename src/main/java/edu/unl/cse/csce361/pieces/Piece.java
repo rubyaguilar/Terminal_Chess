@@ -66,7 +66,7 @@ public abstract class Piece {
 			currColumn += horizontalStep;
 			
 			Point currPoint = new Point(currRow, currColumn);
-			Piece spot = Board.getBoard().getPiece(currPoint);
+			Piece spot = Piece.getPiece(currPoint);
 			
 			if(spot != null) {
 				return false;
@@ -88,7 +88,7 @@ public abstract class Piece {
 			currRow += verticalStep;
 			
 			Point currPoint = new Point(currRow, currColumn);
-			Piece spot = Board.getBoard().getPiece(currPoint);
+			Piece spot = Piece.getPiece(currPoint);
 			
 			if(spot != null) {
 				return false;
@@ -110,7 +110,7 @@ public abstract class Piece {
 			currColumn += horizontalStep;
 			
 			Point currPoint = new Point(currRow, currColumn);
-			Piece spot = Board.getBoard().getPiece(currPoint);
+			Piece spot = Piece.getPiece(currPoint);
 			
 			if(spot != null) {
 				return false;
@@ -119,6 +119,52 @@ public abstract class Piece {
 
 		return true;
 	}
+	
+	public static Piece getPiece(Point p) {
+		Piece piece = null;
+		String str = Board.getSpot(p);
+		switch (str) {
+		case "\u2654":
+			piece = new King(ColorSet.WHITE,p);
+			break;
+		case "\u2655":
+			piece = new Queen(ColorSet.WHITE,p);
+			break;
+		case "\u2656":
+			piece = new Rook(ColorSet.WHITE,p);
+			break;
+		case "\u2657":
+			piece = new Bishop(ColorSet.WHITE,p);
+			break;
+		case "\u2658":
+			piece = new Knight(ColorSet.WHITE,p);
+			break;
+		case "\u2659":
+			piece = new Pawn(ColorSet.WHITE,p);
+			break;
+		case "\u265A":
+			piece = new King(ColorSet.BLACK,p);
+			break;
+		case "\u265B":
+			piece = new Queen(ColorSet.BLACK,p);
+			break;
+		case "\u265C":
+			piece = new Rook(ColorSet.BLACK,p);
+			break;
+		case "\u265D":
+			piece = new Bishop(ColorSet.BLACK,p);
+			break;
+		case "\u265E":
+			piece = new Knight(ColorSet.BLACK,p);
+			break;
+		case "\u265F":
+			piece = new Pawn(ColorSet.BLACK,p);
+			break;
+		
+		}
+		return piece;
+	}
+
 	
 	public boolean isStatus() {
 		return status;
