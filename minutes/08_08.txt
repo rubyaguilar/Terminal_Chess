@@ -1,0 +1,65 @@
+﻿2019-08-08
+
+
+##  Emily Ewalt 
+
+
+*   Activity/accomplishments since last scrum
+        *   I accepted a merge request
+        *   I was moving, didn’t have time to work really
+*   Planned activity before next scrum
+        *   Catch up on changes that I missed
+        *   Close some issues
+*   Obstacles/Issues
+        *   Bit behind on where we are in the code
+
+
+##  Ruben Aguilar: 
+
+
+*   Activity/accomplishments since last scrum
+        *   ...
+        *   ...
+*   Planned activity before next scrum
+        *   ...
+        *   ...
+*   Obstacles/Issues
+        *   ...
+        *   ...
+
+
+##  Suhaib Shaikh: 
+
+
+*   Activity/accomplishments since last scrum
+        *   Finished class diagram
+*   Planned activity before next scrum
+        *  Work and Finish on player class by this weekend hopefully
+*   Obstacles/Issues
+        *   Same issues as last time, just didn’t have time to work on it since then
+
+
+##  Shichen Zhao: 
+
+
+*   Activity/accomplishments since last scrum
+        *   Implemented the validation method in Point class
+        *   
+*   Planned activity before next scrum
+        * try to close some issues  
+        *  think about how to get the board and logic class together
+*   Obstacles/Issues
+        *   ...
+        *   ...
+
+
+##  Issues
+*   Opened since last scrum: None
+*   Closed since last scrum: Implement way to get location from string content
+
+
+##  Other topics
+
+
+*   Start working on some open issues
+*   Put everything together so we can actually start testing
