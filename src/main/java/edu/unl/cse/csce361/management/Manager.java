@@ -47,10 +47,18 @@ public class Manager {
 		System.out.print("\n" + p.getPlayerName() + ", which piece would you like to move? ");
 		String pm = a.nextLine();
 		Point piecetoMove = new Point(pm);
-		while (Piece.getPiece(piecetoMove).getColor() != p.getColor() ) {
+		Piece piece = Piece.getPiece(piecetoMove);
+		while (piece == null ) {
+			System.out.print("Please select a piece: ");
+			pm = a.nextLine();
+			piecetoMove = new Point(pm);
+			piece = Piece.getPiece(piecetoMove);
+		}
+		while (piece.getColor() != p.getColor() ) {
 			System.out.print("Not your piece. Please select a valid piece: ");
 			pm = a.nextLine();
 			piecetoMove = new Point(pm);
+			piece = Piece.getPiece(piecetoMove);
 		}
 		return piecetoMove;
 	}
