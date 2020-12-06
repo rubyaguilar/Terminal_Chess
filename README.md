@@ -1,4 +1,4 @@
 #   Chess
 
-Capstone project for CSCE 361, Summer 2019.
+![alt text](https://github.com/rubyaguilar/Terminal_Chess/blob/main/src/main/java/edu/unl/cse/csce361/chess_welcome.png?raw=true)
 
